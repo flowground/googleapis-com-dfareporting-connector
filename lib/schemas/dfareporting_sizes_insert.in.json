@@ -1,0 +1,58 @@
+{
+    "type": "object",
+    "properties": {
+        "profileId": {
+            "required": true,
+            "type": "string"
+        },
+        "fields": {
+            "type": "string"
+        },
+        "key": {
+            "type": "string"
+        },
+        "oauth_token": {
+            "type": "string"
+        },
+        "prettyPrint": {
+            "type": "boolean",
+            "default": true
+        },
+        "quotaUser": {
+            "type": "string"
+        },
+        "userIp": {
+            "type": "string"
+        },
+        "requestBody": {
+            "description": "Represents the dimensions of ads, placements, creatives, or creative assets.",
+            "properties": {
+                "height": {
+                    "description": "Height of this size. Acceptable values are 0 to 32767, inclusive.",
+                    "format": "int32",
+                    "type": "integer"
+                },
+                "iab": {
+                    "description": "IAB standard size. This is a read-only, auto-generated field.",
+                    "type": "boolean"
+                },
+                "id": {
+                    "description": "ID of this size. This is a read-only, auto-generated field.",
+                    "format": "int64",
+                    "type": "string"
+                },
+                "kind": {
+                    "default": "dfareporting#size",
+                    "description": "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#size\".",
+                    "type": "string"
+                },
+                "width": {
+                    "description": "Width of this size. Acceptable values are 0 to 32767, inclusive.",
+                    "format": "int32",
+                    "type": "integer"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

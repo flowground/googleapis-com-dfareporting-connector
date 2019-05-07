@@ -1,0 +1,3518 @@
+{
+    "title": "DCM/DFA Reporting And Trafficking",
+    "description": "Manages your DoubleClick Campaign Manager ad campaigns and reports.",
+    "docsUrl": "https://developers.google.com/doubleclick-advertisers/",
+    "url": "https://api.apis.guru/v2/specs/googleapis.com/dfareporting/v3.3/swagger.json",
+    "envVars": {
+        "OAUTH_CLIENT_ID": {
+            "description": "OAuth Client ID"
+        },
+        "OAUTH_CLIENT_SECRET": {
+            "description": "OAuth Client Secret"
+        }
+    },
+    "credentials": {
+        "fields": {
+            "server": {
+                "label": "Server",
+                "viewClass": "SelectView",
+                "model": [
+                    "https://www.googleapis.com/dfareporting/v3.3",
+                    "--- Custom URL"
+                ],
+                "required": true
+            },
+            "otherServer": {
+                "label": "Custom Server URL",
+                "viewClass": "TextFieldView"
+            },
+            "Oauth2": {
+                "label": "Oauth 2.0 authentication",
+                "viewClass": "OAuthFieldView"
+            }
+        },
+        "oauth2": {
+            "client_id": "{{OAUTH_CLIENT_ID}}",
+            "client_secret": "{{OAUTH_CLIENT_SECRET}}",
+            "auth_uri": "https://accounts.google.com/o/oauth2/auth"
+        }
+    },
+    "triggers": {
+        "startFlow": {
+            "main": "./lib/triggers/startFlow.js",
+            "type": "polling",
+            "title": "Start Flow",
+            "fields": {}
+        }
+    },
+    "actions": {
+        "dfareporting_files_get": {
+            "main": "./lib/actions/dfareporting_files_get.js",
+            "title": "Retrieves a report file by its report ID and file ID. This method supports media download.",
+            "description": "Retrieves a report file by its report ID and file ID. This method supports media download.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_files_get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_userProfiles_list": {
+            "main": "./lib/actions/dfareporting_userProfiles_list.js",
+            "title": "Retrieves list of user profiles for a user.",
+            "description": "Retrieves list of user profiles for a user.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_userProfiles_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_userProfiles_get": {
+            "main": "./lib/actions/dfareporting_userProfiles_get.js",
+            "title": "Gets one user profile by ID.",
+            "description": "Gets one user profile by ID.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_userProfiles_get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_accountActiveAdSummaries_get": {
+            "main": "./lib/actions/dfareporting_accountActiveAdSummaries_get.js",
+            "title": "Gets the account's active ad summary by account ID.",
+            "description": "Gets the account's active ad summary by account ID.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_accountActiveAdSummaries_get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_accountPermissionGroups_list": {
+            "main": "./lib/actions/dfareporting_accountPermissionGroups_list.js",
+            "title": "Retrieves the list of account permission groups.",
+            "description": "Retrieves the list of account permission groups.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_accountPermissionGroups_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_accountPermissionGroups_get": {
+            "main": "./lib/actions/dfareporting_accountPermissionGroups_get.js",
+            "title": "Gets one account permission group by ID.",
+            "description": "Gets one account permission group by ID.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_accountPermissionGroups_get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_accountPermissions_list": {
+            "main": "./lib/actions/dfareporting_accountPermissions_list.js",
+            "title": "Retrieves the list of account permissions.",
+            "description": "Retrieves the list of account permissions.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_accountPermissions_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_accountPermissions_get": {
+            "main": "./lib/actions/dfareporting_accountPermissions_get.js",
+            "title": "Gets one account permission by ID.",
+            "description": "Gets one account permission by ID.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_accountPermissions_get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_accountUserProfiles_list": {
+            "main": "./lib/actions/dfareporting_accountUserProfiles_list.js",
+            "title": "Retrieves a list of account user profiles, possibly filtered. This method supports paging.",
+            "description": "Retrieves a list of account user profiles, possibly filtered. This method supports paging.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_accountUserProfiles_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_accountUserProfiles_patch": {
+            "main": "./lib/actions/dfareporting_accountUserProfiles_patch.js",
+            "title": "Updates an existing account user profile. This method supports patch semantics.",
+            "description": "Updates an existing account user profile. This method supports patch semantics.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_accountUserProfiles_patch.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_accountUserProfiles_insert": {
+            "main": "./lib/actions/dfareporting_accountUserProfiles_insert.js",
+            "title": "Inserts a new account user profile.",
+            "description": "Inserts a new account user profile.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_accountUserProfiles_insert.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_accountUserProfiles_update": {
+            "main": "./lib/actions/dfareporting_accountUserProfiles_update.js",
+            "title": "Updates an existing account user profile.",
+            "description": "Updates an existing account user profile.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_accountUserProfiles_update.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_accountUserProfiles_get": {
+            "main": "./lib/actions/dfareporting_accountUserProfiles_get.js",
+            "title": "Gets one account user profile by ID.",
+            "description": "Gets one account user profile by ID.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_accountUserProfiles_get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_accounts_list": {
+            "main": "./lib/actions/dfareporting_accounts_list.js",
+            "title": "Retrieves the list of accounts, possibly filtered. This method supports paging.",
+            "description": "Retrieves the list of accounts, possibly filtered. This method supports paging.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_accounts_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_accounts_patch": {
+            "main": "./lib/actions/dfareporting_accounts_patch.js",
+            "title": "Updates an existing account. This method supports patch semantics.",
+            "description": "Updates an existing account. This method supports patch semantics.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_accounts_patch.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_accounts_update": {
+            "main": "./lib/actions/dfareporting_accounts_update.js",
+            "title": "Updates an existing account.",
+            "description": "Updates an existing account.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_accounts_update.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_accounts_get": {
+            "main": "./lib/actions/dfareporting_accounts_get.js",
+            "title": "Gets one account by ID.",
+            "description": "Gets one account by ID.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_accounts_get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_ads_list": {
+            "main": "./lib/actions/dfareporting_ads_list.js",
+            "title": "Retrieves a list of ads, possibly filtered. This method supports paging.",
+            "description": "Retrieves a list of ads, possibly filtered. This method supports paging.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_ads_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_ads_patch": {
+            "main": "./lib/actions/dfareporting_ads_patch.js",
+            "title": "Updates an existing ad. This method supports patch semantics.",
+            "description": "Updates an existing ad. This method supports patch semantics.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_ads_patch.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_ads_insert": {
+            "main": "./lib/actions/dfareporting_ads_insert.js",
+            "title": "Inserts a new ad.",
+            "description": "Inserts a new ad.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_ads_insert.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_ads_update": {
+            "main": "./lib/actions/dfareporting_ads_update.js",
+            "title": "Updates an existing ad.",
+            "description": "Updates an existing ad.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_ads_update.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_ads_get": {
+            "main": "./lib/actions/dfareporting_ads_get.js",
+            "title": "Gets one ad by ID.",
+            "description": "Gets one ad by ID.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_ads_get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_advertiserGroups_list": {
+            "main": "./lib/actions/dfareporting_advertiserGroups_list.js",
+            "title": "Retrieves a list of advertiser groups, possibly filtered. This method supports paging.",
+            "description": "Retrieves a list of advertiser groups, possibly filtered. This method supports paging.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_advertiserGroups_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_advertiserGroups_patch": {
+            "main": "./lib/actions/dfareporting_advertiserGroups_patch.js",
+            "title": "Updates an existing advertiser group. This method supports patch semantics.",
+            "description": "Updates an existing advertiser group. This method supports patch semantics.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_advertiserGroups_patch.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_advertiserGroups_insert": {
+            "main": "./lib/actions/dfareporting_advertiserGroups_insert.js",
+            "title": "Inserts a new advertiser group.",
+            "description": "Inserts a new advertiser group.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_advertiserGroups_insert.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_advertiserGroups_update": {
+            "main": "./lib/actions/dfareporting_advertiserGroups_update.js",
+            "title": "Updates an existing advertiser group.",
+            "description": "Updates an existing advertiser group.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_advertiserGroups_update.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_advertiserGroups_delete": {
+            "main": "./lib/actions/dfareporting_advertiserGroups_delete.js",
+            "title": "Deletes an existing advertiser group.",
+            "description": "Deletes an existing advertiser group.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_advertiserGroups_delete.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_advertiserGroups_get": {
+            "main": "./lib/actions/dfareporting_advertiserGroups_get.js",
+            "title": "Gets one advertiser group by ID.",
+            "description": "Gets one advertiser group by ID.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_advertiserGroups_get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_advertiserLandingPages_list": {
+            "main": "./lib/actions/dfareporting_advertiserLandingPages_list.js",
+            "title": "Retrieves a list of landing pages.",
+            "description": "Retrieves a list of landing pages.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_advertiserLandingPages_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_advertiserLandingPages_patch": {
+            "main": "./lib/actions/dfareporting_advertiserLandingPages_patch.js",
+            "title": "Updates an existing landing page. This method supports patch semantics.",
+            "description": "Updates an existing landing page. This method supports patch semantics.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_advertiserLandingPages_patch.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_advertiserLandingPages_insert": {
+            "main": "./lib/actions/dfareporting_advertiserLandingPages_insert.js",
+            "title": "Inserts a new landing page.",
+            "description": "Inserts a new landing page.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_advertiserLandingPages_insert.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_advertiserLandingPages_update": {
+            "main": "./lib/actions/dfareporting_advertiserLandingPages_update.js",
+            "title": "Updates an existing landing page.",
+            "description": "Updates an existing landing page.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_advertiserLandingPages_update.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_advertiserLandingPages_get": {
+            "main": "./lib/actions/dfareporting_advertiserLandingPages_get.js",
+            "title": "Gets one landing page by ID.",
+            "description": "Gets one landing page by ID.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_advertiserLandingPages_get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_advertisers_list": {
+            "main": "./lib/actions/dfareporting_advertisers_list.js",
+            "title": "Retrieves a list of advertisers, possibly filtered. This method supports paging.",
+            "description": "Retrieves a list of advertisers, possibly filtered. This method supports paging.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_advertisers_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_advertisers_patch": {
+            "main": "./lib/actions/dfareporting_advertisers_patch.js",
+            "title": "Updates an existing advertiser. This method supports patch semantics.",
+            "description": "Updates an existing advertiser. This method supports patch semantics.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_advertisers_patch.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_advertisers_insert": {
+            "main": "./lib/actions/dfareporting_advertisers_insert.js",
+            "title": "Inserts a new advertiser.",
+            "description": "Inserts a new advertiser.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_advertisers_insert.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_advertisers_update": {
+            "main": "./lib/actions/dfareporting_advertisers_update.js",
+            "title": "Updates an existing advertiser.",
+            "description": "Updates an existing advertiser.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_advertisers_update.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_advertisers_get": {
+            "main": "./lib/actions/dfareporting_advertisers_get.js",
+            "title": "Gets one advertiser by ID.",
+            "description": "Gets one advertiser by ID.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_advertisers_get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_browsers_list": {
+            "main": "./lib/actions/dfareporting_browsers_list.js",
+            "title": "Retrieves a list of browsers.",
+            "description": "Retrieves a list of browsers.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_browsers_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_campaigns_list": {
+            "main": "./lib/actions/dfareporting_campaigns_list.js",
+            "title": "Retrieves a list of campaigns, possibly filtered. This method supports paging.",
+            "description": "Retrieves a list of campaigns, possibly filtered. This method supports paging.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_campaigns_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_campaigns_patch": {
+            "main": "./lib/actions/dfareporting_campaigns_patch.js",
+            "title": "Updates an existing campaign. This method supports patch semantics.",
+            "description": "Updates an existing campaign. This method supports patch semantics.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_campaigns_patch.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_campaigns_insert": {
+            "main": "./lib/actions/dfareporting_campaigns_insert.js",
+            "title": "Inserts a new campaign.",
+            "description": "Inserts a new campaign.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_campaigns_insert.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_campaigns_update": {
+            "main": "./lib/actions/dfareporting_campaigns_update.js",
+            "title": "Updates an existing campaign.",
+            "description": "Updates an existing campaign.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_campaigns_update.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_campaignCreativeAssociations_list": {
+            "main": "./lib/actions/dfareporting_campaignCreativeAssociations_list.js",
+            "title": "Retrieves the list of creative IDs associated with the specified campaign. This method supports paging.",
+            "description": "Retrieves the list of creative IDs associated with the specified campaign. This method supports paging.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_campaignCreativeAssociations_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_campaignCreativeAssociations_insert": {
+            "main": "./lib/actions/dfareporting_campaignCreativeAssociations_insert.js",
+            "title": "Associates a creative with the specified campaign. This method creates a default ad with dimensions matching the creative in the campaign if such a default ad does not exist already.",
+            "description": "Associates a creative with the specified campaign. This method creates a default ad with dimensions matching the creative in the campaign if such a default ad does not exist already.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_campaignCreativeAssociations_insert.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_campaigns_get": {
+            "main": "./lib/actions/dfareporting_campaigns_get.js",
+            "title": "Gets one campaign by ID.",
+            "description": "Gets one campaign by ID.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_campaigns_get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_changeLogs_list": {
+            "main": "./lib/actions/dfareporting_changeLogs_list.js",
+            "title": "Retrieves a list of change logs. This method supports paging.",
+            "description": "Retrieves a list of change logs. This method supports paging.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_changeLogs_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_changeLogs_get": {
+            "main": "./lib/actions/dfareporting_changeLogs_get.js",
+            "title": "Gets one change log by ID.",
+            "description": "Gets one change log by ID.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_changeLogs_get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_cities_list": {
+            "main": "./lib/actions/dfareporting_cities_list.js",
+            "title": "Retrieves a list of cities, possibly filtered.",
+            "description": "Retrieves a list of cities, possibly filtered.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_cities_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_connectionTypes_list": {
+            "main": "./lib/actions/dfareporting_connectionTypes_list.js",
+            "title": "Retrieves a list of connection types.",
+            "description": "Retrieves a list of connection types.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_connectionTypes_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_connectionTypes_get": {
+            "main": "./lib/actions/dfareporting_connectionTypes_get.js",
+            "title": "Gets one connection type by ID.",
+            "description": "Gets one connection type by ID.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_connectionTypes_get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_contentCategories_list": {
+            "main": "./lib/actions/dfareporting_contentCategories_list.js",
+            "title": "Retrieves a list of content categories, possibly filtered. This method supports paging.",
+            "description": "Retrieves a list of content categories, possibly filtered. This method supports paging.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_contentCategories_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_contentCategories_patch": {
+            "main": "./lib/actions/dfareporting_contentCategories_patch.js",
+            "title": "Updates an existing content category. This method supports patch semantics.",
+            "description": "Updates an existing content category. This method supports patch semantics.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_contentCategories_patch.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_contentCategories_insert": {
+            "main": "./lib/actions/dfareporting_contentCategories_insert.js",
+            "title": "Inserts a new content category.",
+            "description": "Inserts a new content category.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_contentCategories_insert.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_contentCategories_update": {
+            "main": "./lib/actions/dfareporting_contentCategories_update.js",
+            "title": "Updates an existing content category.",
+            "description": "Updates an existing content category.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_contentCategories_update.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_contentCategories_delete": {
+            "main": "./lib/actions/dfareporting_contentCategories_delete.js",
+            "title": "Deletes an existing content category.",
+            "description": "Deletes an existing content category.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_contentCategories_delete.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_contentCategories_get": {
+            "main": "./lib/actions/dfareporting_contentCategories_get.js",
+            "title": "Gets one content category by ID.",
+            "description": "Gets one content category by ID.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_contentCategories_get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_conversions_batchinsert": {
+            "main": "./lib/actions/dfareporting_conversions_batchinsert.js",
+            "title": "Inserts conversions.",
+            "description": "Inserts conversions.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_conversions_batchinsert.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_conversions_batchupdate": {
+            "main": "./lib/actions/dfareporting_conversions_batchupdate.js",
+            "title": "Updates existing conversions.",
+            "description": "Updates existing conversions.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_conversions_batchupdate.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_countries_list": {
+            "main": "./lib/actions/dfareporting_countries_list.js",
+            "title": "Retrieves a list of countries.",
+            "description": "Retrieves a list of countries.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_countries_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_countries_get": {
+            "main": "./lib/actions/dfareporting_countries_get.js",
+            "title": "Gets one country by ID.",
+            "description": "Gets one country by ID.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_countries_get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_creativeAssets_insert": {
+            "main": "./lib/actions/dfareporting_creativeAssets_insert.js",
+            "title": "Inserts a new creative asset.",
+            "description": "Inserts a new creative asset.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_creativeAssets_insert.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_creativeFields_list": {
+            "main": "./lib/actions/dfareporting_creativeFields_list.js",
+            "title": "Retrieves a list of creative fields, possibly filtered. This method supports paging.",
+            "description": "Retrieves a list of creative fields, possibly filtered. This method supports paging.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_creativeFields_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_creativeFields_patch": {
+            "main": "./lib/actions/dfareporting_creativeFields_patch.js",
+            "title": "Updates an existing creative field. This method supports patch semantics.",
+            "description": "Updates an existing creative field. This method supports patch semantics.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_creativeFields_patch.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_creativeFields_insert": {
+            "main": "./lib/actions/dfareporting_creativeFields_insert.js",
+            "title": "Inserts a new creative field.",
+            "description": "Inserts a new creative field.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_creativeFields_insert.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_creativeFields_update": {
+            "main": "./lib/actions/dfareporting_creativeFields_update.js",
+            "title": "Updates an existing creative field.",
+            "description": "Updates an existing creative field.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_creativeFields_update.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_creativeFieldValues_list": {
+            "main": "./lib/actions/dfareporting_creativeFieldValues_list.js",
+            "title": "Retrieves a list of creative field values, possibly filtered. This method supports paging.",
+            "description": "Retrieves a list of creative field values, possibly filtered. This method supports paging.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_creativeFieldValues_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_creativeFieldValues_patch": {
+            "main": "./lib/actions/dfareporting_creativeFieldValues_patch.js",
+            "title": "Updates an existing creative field value. This method supports patch semantics.",
+            "description": "Updates an existing creative field value. This method supports patch semantics.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_creativeFieldValues_patch.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_creativeFieldValues_insert": {
+            "main": "./lib/actions/dfareporting_creativeFieldValues_insert.js",
+            "title": "Inserts a new creative field value.",
+            "description": "Inserts a new creative field value.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_creativeFieldValues_insert.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_creativeFieldValues_update": {
+            "main": "./lib/actions/dfareporting_creativeFieldValues_update.js",
+            "title": "Updates an existing creative field value.",
+            "description": "Updates an existing creative field value.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_creativeFieldValues_update.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_creativeFieldValues_delete": {
+            "main": "./lib/actions/dfareporting_creativeFieldValues_delete.js",
+            "title": "Deletes an existing creative field value.",
+            "description": "Deletes an existing creative field value.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_creativeFieldValues_delete.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_creativeFieldValues_get": {
+            "main": "./lib/actions/dfareporting_creativeFieldValues_get.js",
+            "title": "Gets one creative field value by ID.",
+            "description": "Gets one creative field value by ID.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_creativeFieldValues_get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_creativeFields_delete": {
+            "main": "./lib/actions/dfareporting_creativeFields_delete.js",
+            "title": "Deletes an existing creative field.",
+            "description": "Deletes an existing creative field.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_creativeFields_delete.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_creativeFields_get": {
+            "main": "./lib/actions/dfareporting_creativeFields_get.js",
+            "title": "Gets one creative field by ID.",
+            "description": "Gets one creative field by ID.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_creativeFields_get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_creativeGroups_list": {
+            "main": "./lib/actions/dfareporting_creativeGroups_list.js",
+            "title": "Retrieves a list of creative groups, possibly filtered. This method supports paging.",
+            "description": "Retrieves a list of creative groups, possibly filtered. This method supports paging.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_creativeGroups_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_creativeGroups_patch": {
+            "main": "./lib/actions/dfareporting_creativeGroups_patch.js",
+            "title": "Updates an existing creative group. This method supports patch semantics.",
+            "description": "Updates an existing creative group. This method supports patch semantics.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_creativeGroups_patch.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_creativeGroups_insert": {
+            "main": "./lib/actions/dfareporting_creativeGroups_insert.js",
+            "title": "Inserts a new creative group.",
+            "description": "Inserts a new creative group.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_creativeGroups_insert.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_creativeGroups_update": {
+            "main": "./lib/actions/dfareporting_creativeGroups_update.js",
+            "title": "Updates an existing creative group.",
+            "description": "Updates an existing creative group.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_creativeGroups_update.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_creativeGroups_get": {
+            "main": "./lib/actions/dfareporting_creativeGroups_get.js",
+            "title": "Gets one creative group by ID.",
+            "description": "Gets one creative group by ID.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_creativeGroups_get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_creatives_list": {
+            "main": "./lib/actions/dfareporting_creatives_list.js",
+            "title": "Retrieves a list of creatives, possibly filtered. This method supports paging.",
+            "description": "Retrieves a list of creatives, possibly filtered. This method supports paging.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_creatives_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_creatives_patch": {
+            "main": "./lib/actions/dfareporting_creatives_patch.js",
+            "title": "Updates an existing creative. This method supports patch semantics.",
+            "description": "Updates an existing creative. This method supports patch semantics.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_creatives_patch.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_creatives_insert": {
+            "main": "./lib/actions/dfareporting_creatives_insert.js",
+            "title": "Inserts a new creative.",
+            "description": "Inserts a new creative.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_creatives_insert.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_creatives_update": {
+            "main": "./lib/actions/dfareporting_creatives_update.js",
+            "title": "Updates an existing creative.",
+            "description": "Updates an existing creative.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_creatives_update.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_creatives_get": {
+            "main": "./lib/actions/dfareporting_creatives_get.js",
+            "title": "Gets one creative by ID.",
+            "description": "Gets one creative by ID.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_creatives_get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_dimensionValues_query": {
+            "main": "./lib/actions/dfareporting_dimensionValues_query.js",
+            "title": "Retrieves list of report dimension values for a list of filters.",
+            "description": "Retrieves list of report dimension values for a list of filters.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_dimensionValues_query.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_directorySites_list": {
+            "main": "./lib/actions/dfareporting_directorySites_list.js",
+            "title": "Retrieves a list of directory sites, possibly filtered. This method supports paging.",
+            "description": "Retrieves a list of directory sites, possibly filtered. This method supports paging.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_directorySites_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_directorySites_insert": {
+            "main": "./lib/actions/dfareporting_directorySites_insert.js",
+            "title": "Inserts a new directory site.",
+            "description": "Inserts a new directory site.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_directorySites_insert.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_directorySites_get": {
+            "main": "./lib/actions/dfareporting_directorySites_get.js",
+            "title": "Gets one directory site by ID.",
+            "description": "Gets one directory site by ID.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_directorySites_get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_dynamicTargetingKeys_list": {
+            "main": "./lib/actions/dfareporting_dynamicTargetingKeys_list.js",
+            "title": "Retrieves a list of dynamic targeting keys.",
+            "description": "Retrieves a list of dynamic targeting keys.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_dynamicTargetingKeys_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_dynamicTargetingKeys_insert": {
+            "main": "./lib/actions/dfareporting_dynamicTargetingKeys_insert.js",
+            "title": "Inserts a new dynamic targeting key. Keys must be created at the advertiser level before being assigned to the advertiser's ads, creatives, or placements. There is a maximum of 1000 keys per advertiser, out of which a maximum of 20 keys can be assigned per ad, creative, or placement.",
+            "description": "Inserts a new dynamic targeting key. Keys must be created at the advertiser level before being assigned to the advertiser's ads, creatives, or placements. There is a maximum of 1000 keys per advertiser, out of which a maximum of 20 keys can be assigned per ad, creative, or placement.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_dynamicTargetingKeys_insert.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_dynamicTargetingKeys_delete": {
+            "main": "./lib/actions/dfareporting_dynamicTargetingKeys_delete.js",
+            "title": "Deletes an existing dynamic targeting key.",
+            "description": "Deletes an existing dynamic targeting key.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_dynamicTargetingKeys_delete.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_eventTags_list": {
+            "main": "./lib/actions/dfareporting_eventTags_list.js",
+            "title": "Retrieves a list of event tags, possibly filtered.",
+            "description": "Retrieves a list of event tags, possibly filtered.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_eventTags_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_eventTags_patch": {
+            "main": "./lib/actions/dfareporting_eventTags_patch.js",
+            "title": "Updates an existing event tag. This method supports patch semantics.",
+            "description": "Updates an existing event tag. This method supports patch semantics.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_eventTags_patch.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_eventTags_insert": {
+            "main": "./lib/actions/dfareporting_eventTags_insert.js",
+            "title": "Inserts a new event tag.",
+            "description": "Inserts a new event tag.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_eventTags_insert.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_eventTags_update": {
+            "main": "./lib/actions/dfareporting_eventTags_update.js",
+            "title": "Updates an existing event tag.",
+            "description": "Updates an existing event tag.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_eventTags_update.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_eventTags_delete": {
+            "main": "./lib/actions/dfareporting_eventTags_delete.js",
+            "title": "Deletes an existing event tag.",
+            "description": "Deletes an existing event tag.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_eventTags_delete.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_eventTags_get": {
+            "main": "./lib/actions/dfareporting_eventTags_get.js",
+            "title": "Gets one event tag by ID.",
+            "description": "Gets one event tag by ID.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_eventTags_get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_files_list": {
+            "main": "./lib/actions/dfareporting_files_list.js",
+            "title": "Lists files for a user profile.",
+            "description": "Lists files for a user profile.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_files_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_floodlightActivities_list": {
+            "main": "./lib/actions/dfareporting_floodlightActivities_list.js",
+            "title": "Retrieves a list of floodlight activities, possibly filtered. This method supports paging.",
+            "description": "Retrieves a list of floodlight activities, possibly filtered. This method supports paging.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_floodlightActivities_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_floodlightActivities_patch": {
+            "main": "./lib/actions/dfareporting_floodlightActivities_patch.js",
+            "title": "Updates an existing floodlight activity. This method supports patch semantics.",
+            "description": "Updates an existing floodlight activity. This method supports patch semantics.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_floodlightActivities_patch.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_floodlightActivities_insert": {
+            "main": "./lib/actions/dfareporting_floodlightActivities_insert.js",
+            "title": "Inserts a new floodlight activity.",
+            "description": "Inserts a new floodlight activity.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_floodlightActivities_insert.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_floodlightActivities_update": {
+            "main": "./lib/actions/dfareporting_floodlightActivities_update.js",
+            "title": "Updates an existing floodlight activity.",
+            "description": "Updates an existing floodlight activity.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_floodlightActivities_update.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_floodlightActivities_generatetag": {
+            "main": "./lib/actions/dfareporting_floodlightActivities_generatetag.js",
+            "title": "Generates a tag for a floodlight activity.",
+            "description": "Generates a tag for a floodlight activity.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_floodlightActivities_generatetag.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_floodlightActivities_delete": {
+            "main": "./lib/actions/dfareporting_floodlightActivities_delete.js",
+            "title": "Deletes an existing floodlight activity.",
+            "description": "Deletes an existing floodlight activity.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_floodlightActivities_delete.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_floodlightActivities_get": {
+            "main": "./lib/actions/dfareporting_floodlightActivities_get.js",
+            "title": "Gets one floodlight activity by ID.",
+            "description": "Gets one floodlight activity by ID.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_floodlightActivities_get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_floodlightActivityGroups_list": {
+            "main": "./lib/actions/dfareporting_floodlightActivityGroups_list.js",
+            "title": "Retrieves a list of floodlight activity groups, possibly filtered. This method supports paging.",
+            "description": "Retrieves a list of floodlight activity groups, possibly filtered. This method supports paging.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_floodlightActivityGroups_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_floodlightActivityGroups_patch": {
+            "main": "./lib/actions/dfareporting_floodlightActivityGroups_patch.js",
+            "title": "Updates an existing floodlight activity group. This method supports patch semantics.",
+            "description": "Updates an existing floodlight activity group. This method supports patch semantics.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_floodlightActivityGroups_patch.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_floodlightActivityGroups_insert": {
+            "main": "./lib/actions/dfareporting_floodlightActivityGroups_insert.js",
+            "title": "Inserts a new floodlight activity group.",
+            "description": "Inserts a new floodlight activity group.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_floodlightActivityGroups_insert.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_floodlightActivityGroups_update": {
+            "main": "./lib/actions/dfareporting_floodlightActivityGroups_update.js",
+            "title": "Updates an existing floodlight activity group.",
+            "description": "Updates an existing floodlight activity group.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_floodlightActivityGroups_update.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_floodlightActivityGroups_get": {
+            "main": "./lib/actions/dfareporting_floodlightActivityGroups_get.js",
+            "title": "Gets one floodlight activity group by ID.",
+            "description": "Gets one floodlight activity group by ID.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_floodlightActivityGroups_get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_floodlightConfigurations_list": {
+            "main": "./lib/actions/dfareporting_floodlightConfigurations_list.js",
+            "title": "Retrieves a list of floodlight configurations, possibly filtered.",
+            "description": "Retrieves a list of floodlight configurations, possibly filtered.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_floodlightConfigurations_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_floodlightConfigurations_patch": {
+            "main": "./lib/actions/dfareporting_floodlightConfigurations_patch.js",
+            "title": "Updates an existing floodlight configuration. This method supports patch semantics.",
+            "description": "Updates an existing floodlight configuration. This method supports patch semantics.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_floodlightConfigurations_patch.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_floodlightConfigurations_update": {
+            "main": "./lib/actions/dfareporting_floodlightConfigurations_update.js",
+            "title": "Updates an existing floodlight configuration.",
+            "description": "Updates an existing floodlight configuration.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_floodlightConfigurations_update.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_floodlightConfigurations_get": {
+            "main": "./lib/actions/dfareporting_floodlightConfigurations_get.js",
+            "title": "Gets one floodlight configuration by ID.",
+            "description": "Gets one floodlight configuration by ID.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_floodlightConfigurations_get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_languages_list": {
+            "main": "./lib/actions/dfareporting_languages_list.js",
+            "title": "Retrieves a list of languages.",
+            "description": "Retrieves a list of languages.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_languages_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_metros_list": {
+            "main": "./lib/actions/dfareporting_metros_list.js",
+            "title": "Retrieves a list of metros.",
+            "description": "Retrieves a list of metros.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_metros_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_mobileApps_list": {
+            "main": "./lib/actions/dfareporting_mobileApps_list.js",
+            "title": "Retrieves list of available mobile apps.",
+            "description": "Retrieves list of available mobile apps.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_mobileApps_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_mobileApps_get": {
+            "main": "./lib/actions/dfareporting_mobileApps_get.js",
+            "title": "Gets one mobile app by ID.",
+            "description": "Gets one mobile app by ID.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_mobileApps_get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_mobileCarriers_list": {
+            "main": "./lib/actions/dfareporting_mobileCarriers_list.js",
+            "title": "Retrieves a list of mobile carriers.",
+            "description": "Retrieves a list of mobile carriers.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_mobileCarriers_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_mobileCarriers_get": {
+            "main": "./lib/actions/dfareporting_mobileCarriers_get.js",
+            "title": "Gets one mobile carrier by ID.",
+            "description": "Gets one mobile carrier by ID.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_mobileCarriers_get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_operatingSystemVersions_list": {
+            "main": "./lib/actions/dfareporting_operatingSystemVersions_list.js",
+            "title": "Retrieves a list of operating system versions.",
+            "description": "Retrieves a list of operating system versions.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_operatingSystemVersions_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_operatingSystemVersions_get": {
+            "main": "./lib/actions/dfareporting_operatingSystemVersions_get.js",
+            "title": "Gets one operating system version by ID.",
+            "description": "Gets one operating system version by ID.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_operatingSystemVersions_get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_operatingSystems_list": {
+            "main": "./lib/actions/dfareporting_operatingSystems_list.js",
+            "title": "Retrieves a list of operating systems.",
+            "description": "Retrieves a list of operating systems.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_operatingSystems_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_operatingSystems_get": {
+            "main": "./lib/actions/dfareporting_operatingSystems_get.js",
+            "title": "Gets one operating system by DART ID.",
+            "description": "Gets one operating system by DART ID.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_operatingSystems_get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_placementGroups_list": {
+            "main": "./lib/actions/dfareporting_placementGroups_list.js",
+            "title": "Retrieves a list of placement groups, possibly filtered. This method supports paging.",
+            "description": "Retrieves a list of placement groups, possibly filtered. This method supports paging.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_placementGroups_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_placementGroups_patch": {
+            "main": "./lib/actions/dfareporting_placementGroups_patch.js",
+            "title": "Updates an existing placement group. This method supports patch semantics.",
+            "description": "Updates an existing placement group. This method supports patch semantics.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_placementGroups_patch.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_placementGroups_insert": {
+            "main": "./lib/actions/dfareporting_placementGroups_insert.js",
+            "title": "Inserts a new placement group.",
+            "description": "Inserts a new placement group.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_placementGroups_insert.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_placementGroups_update": {
+            "main": "./lib/actions/dfareporting_placementGroups_update.js",
+            "title": "Updates an existing placement group.",
+            "description": "Updates an existing placement group.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_placementGroups_update.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_placementGroups_get": {
+            "main": "./lib/actions/dfareporting_placementGroups_get.js",
+            "title": "Gets one placement group by ID.",
+            "description": "Gets one placement group by ID.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_placementGroups_get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_placementStrategies_list": {
+            "main": "./lib/actions/dfareporting_placementStrategies_list.js",
+            "title": "Retrieves a list of placement strategies, possibly filtered. This method supports paging.",
+            "description": "Retrieves a list of placement strategies, possibly filtered. This method supports paging.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_placementStrategies_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_placementStrategies_patch": {
+            "main": "./lib/actions/dfareporting_placementStrategies_patch.js",
+            "title": "Updates an existing placement strategy. This method supports patch semantics.",
+            "description": "Updates an existing placement strategy. This method supports patch semantics.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_placementStrategies_patch.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_placementStrategies_insert": {
+            "main": "./lib/actions/dfareporting_placementStrategies_insert.js",
+            "title": "Inserts a new placement strategy.",
+            "description": "Inserts a new placement strategy.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_placementStrategies_insert.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_placementStrategies_update": {
+            "main": "./lib/actions/dfareporting_placementStrategies_update.js",
+            "title": "Updates an existing placement strategy.",
+            "description": "Updates an existing placement strategy.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_placementStrategies_update.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_placementStrategies_delete": {
+            "main": "./lib/actions/dfareporting_placementStrategies_delete.js",
+            "title": "Deletes an existing placement strategy.",
+            "description": "Deletes an existing placement strategy.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_placementStrategies_delete.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_placementStrategies_get": {
+            "main": "./lib/actions/dfareporting_placementStrategies_get.js",
+            "title": "Gets one placement strategy by ID.",
+            "description": "Gets one placement strategy by ID.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_placementStrategies_get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_placements_list": {
+            "main": "./lib/actions/dfareporting_placements_list.js",
+            "title": "Retrieves a list of placements, possibly filtered. This method supports paging.",
+            "description": "Retrieves a list of placements, possibly filtered. This method supports paging.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_placements_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_placements_patch": {
+            "main": "./lib/actions/dfareporting_placements_patch.js",
+            "title": "Updates an existing placement. This method supports patch semantics.",
+            "description": "Updates an existing placement. This method supports patch semantics.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_placements_patch.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_placements_insert": {
+            "main": "./lib/actions/dfareporting_placements_insert.js",
+            "title": "Inserts a new placement.",
+            "description": "Inserts a new placement.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_placements_insert.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_placements_update": {
+            "main": "./lib/actions/dfareporting_placements_update.js",
+            "title": "Updates an existing placement.",
+            "description": "Updates an existing placement.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_placements_update.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_placements_generatetags": {
+            "main": "./lib/actions/dfareporting_placements_generatetags.js",
+            "title": "Generates tags for a placement.",
+            "description": "Generates tags for a placement.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_placements_generatetags.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_placements_get": {
+            "main": "./lib/actions/dfareporting_placements_get.js",
+            "title": "Gets one placement by ID.",
+            "description": "Gets one placement by ID.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_placements_get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_platformTypes_list": {
+            "main": "./lib/actions/dfareporting_platformTypes_list.js",
+            "title": "Retrieves a list of platform types.",
+            "description": "Retrieves a list of platform types.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_platformTypes_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_platformTypes_get": {
+            "main": "./lib/actions/dfareporting_platformTypes_get.js",
+            "title": "Gets one platform type by ID.",
+            "description": "Gets one platform type by ID.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_platformTypes_get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_postalCodes_list": {
+            "main": "./lib/actions/dfareporting_postalCodes_list.js",
+            "title": "Retrieves a list of postal codes.",
+            "description": "Retrieves a list of postal codes.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_postalCodes_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_postalCodes_get": {
+            "main": "./lib/actions/dfareporting_postalCodes_get.js",
+            "title": "Gets one postal code by ID.",
+            "description": "Gets one postal code by ID.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_postalCodes_get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_projects_list": {
+            "main": "./lib/actions/dfareporting_projects_list.js",
+            "title": "Retrieves a list of projects, possibly filtered. This method supports paging.",
+            "description": "Retrieves a list of projects, possibly filtered. This method supports paging.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_projects_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_projects_get": {
+            "main": "./lib/actions/dfareporting_projects_get.js",
+            "title": "Gets one project by ID.",
+            "description": "Gets one project by ID.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_projects_get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_inventoryItems_list": {
+            "main": "./lib/actions/dfareporting_inventoryItems_list.js",
+            "title": "Retrieves a list of inventory items, possibly filtered. This method supports paging.",
+            "description": "Retrieves a list of inventory items, possibly filtered. This method supports paging.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_inventoryItems_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_inventoryItems_get": {
+            "main": "./lib/actions/dfareporting_inventoryItems_get.js",
+            "title": "Gets one inventory item by ID.",
+            "description": "Gets one inventory item by ID.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_inventoryItems_get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_orderDocuments_list": {
+            "main": "./lib/actions/dfareporting_orderDocuments_list.js",
+            "title": "Retrieves a list of order documents, possibly filtered. This method supports paging.",
+            "description": "Retrieves a list of order documents, possibly filtered. This method supports paging.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_orderDocuments_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_orderDocuments_get": {
+            "main": "./lib/actions/dfareporting_orderDocuments_get.js",
+            "title": "Gets one order document by ID.",
+            "description": "Gets one order document by ID.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_orderDocuments_get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_orders_list": {
+            "main": "./lib/actions/dfareporting_orders_list.js",
+            "title": "Retrieves a list of orders, possibly filtered. This method supports paging.",
+            "description": "Retrieves a list of orders, possibly filtered. This method supports paging.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_orders_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_orders_get": {
+            "main": "./lib/actions/dfareporting_orders_get.js",
+            "title": "Gets one order by ID.",
+            "description": "Gets one order by ID.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_orders_get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_regions_list": {
+            "main": "./lib/actions/dfareporting_regions_list.js",
+            "title": "Retrieves a list of regions.",
+            "description": "Retrieves a list of regions.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_regions_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_remarketingListShares_patch": {
+            "main": "./lib/actions/dfareporting_remarketingListShares_patch.js",
+            "title": "Updates an existing remarketing list share. This method supports patch semantics.",
+            "description": "Updates an existing remarketing list share. This method supports patch semantics.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_remarketingListShares_patch.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_remarketingListShares_update": {
+            "main": "./lib/actions/dfareporting_remarketingListShares_update.js",
+            "title": "Updates an existing remarketing list share.",
+            "description": "Updates an existing remarketing list share.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_remarketingListShares_update.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_remarketingListShares_get": {
+            "main": "./lib/actions/dfareporting_remarketingListShares_get.js",
+            "title": "Gets one remarketing list share by remarketing list ID.",
+            "description": "Gets one remarketing list share by remarketing list ID.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_remarketingListShares_get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_remarketingLists_list": {
+            "main": "./lib/actions/dfareporting_remarketingLists_list.js",
+            "title": "Retrieves a list of remarketing lists, possibly filtered. This method supports paging.",
+            "description": "Retrieves a list of remarketing lists, possibly filtered. This method supports paging.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_remarketingLists_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_remarketingLists_patch": {
+            "main": "./lib/actions/dfareporting_remarketingLists_patch.js",
+            "title": "Updates an existing remarketing list. This method supports patch semantics.",
+            "description": "Updates an existing remarketing list. This method supports patch semantics.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_remarketingLists_patch.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_remarketingLists_insert": {
+            "main": "./lib/actions/dfareporting_remarketingLists_insert.js",
+            "title": "Inserts a new remarketing list.",
+            "description": "Inserts a new remarketing list.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_remarketingLists_insert.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_remarketingLists_update": {
+            "main": "./lib/actions/dfareporting_remarketingLists_update.js",
+            "title": "Updates an existing remarketing list.",
+            "description": "Updates an existing remarketing list.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_remarketingLists_update.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_remarketingLists_get": {
+            "main": "./lib/actions/dfareporting_remarketingLists_get.js",
+            "title": "Gets one remarketing list by ID.",
+            "description": "Gets one remarketing list by ID.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_remarketingLists_get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_reports_list": {
+            "main": "./lib/actions/dfareporting_reports_list.js",
+            "title": "Retrieves list of reports.",
+            "description": "Retrieves list of reports.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_reports_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_reports_insert": {
+            "main": "./lib/actions/dfareporting_reports_insert.js",
+            "title": "Creates a report.",
+            "description": "Creates a report.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_reports_insert.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_reports_compatibleFields_query": {
+            "main": "./lib/actions/dfareporting_reports_compatibleFields_query.js",
+            "title": "Returns the fields that are compatible to be selected in the respective sections of a report criteria, given the fields already selected in the input report and user permissions.",
+            "description": "Returns the fields that are compatible to be selected in the respective sections of a report criteria, given the fields already selected in the input report and user permissions.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_reports_compatibleFields_query.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_reports_delete": {
+            "main": "./lib/actions/dfareporting_reports_delete.js",
+            "title": "Deletes a report by its ID.",
+            "description": "Deletes a report by its ID.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_reports_delete.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_reports_get": {
+            "main": "./lib/actions/dfareporting_reports_get.js",
+            "title": "Retrieves a report by its ID.",
+            "description": "Retrieves a report by its ID.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_reports_get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_reports_patch": {
+            "main": "./lib/actions/dfareporting_reports_patch.js",
+            "title": "Updates a report. This method supports patch semantics.",
+            "description": "Updates a report. This method supports patch semantics.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_reports_patch.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_reports_update": {
+            "main": "./lib/actions/dfareporting_reports_update.js",
+            "title": "Updates a report.",
+            "description": "Updates a report.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_reports_update.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_reports_files_list": {
+            "main": "./lib/actions/dfareporting_reports_files_list.js",
+            "title": "Lists files for a report.",
+            "description": "Lists files for a report.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_reports_files_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_reports_files_get": {
+            "main": "./lib/actions/dfareporting_reports_files_get.js",
+            "title": "Retrieves a report file. This method supports media download.",
+            "description": "Retrieves a report file. This method supports media download.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_reports_files_get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_reports_run": {
+            "main": "./lib/actions/dfareporting_reports_run.js",
+            "title": "Runs a report.",
+            "description": "Runs a report.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_reports_run.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_sites_list": {
+            "main": "./lib/actions/dfareporting_sites_list.js",
+            "title": "Retrieves a list of sites, possibly filtered. This method supports paging.",
+            "description": "Retrieves a list of sites, possibly filtered. This method supports paging.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_sites_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_sites_patch": {
+            "main": "./lib/actions/dfareporting_sites_patch.js",
+            "title": "Updates an existing site. This method supports patch semantics.",
+            "description": "Updates an existing site. This method supports patch semantics.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_sites_patch.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_sites_insert": {
+            "main": "./lib/actions/dfareporting_sites_insert.js",
+            "title": "Inserts a new site.",
+            "description": "Inserts a new site.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_sites_insert.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_sites_update": {
+            "main": "./lib/actions/dfareporting_sites_update.js",
+            "title": "Updates an existing site.",
+            "description": "Updates an existing site.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_sites_update.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_sites_get": {
+            "main": "./lib/actions/dfareporting_sites_get.js",
+            "title": "Gets one site by ID.",
+            "description": "Gets one site by ID.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_sites_get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_sizes_list": {
+            "main": "./lib/actions/dfareporting_sizes_list.js",
+            "title": "Retrieves a list of sizes, possibly filtered. Retrieved sizes are globally unique and may include values not currently in use by your account. Due to this, the list of sizes returned by this method may differ from the list seen in the Trafficking UI.",
+            "description": "Retrieves a list of sizes, possibly filtered. Retrieved sizes are globally unique and may include values not currently in use by your account. Due to this, the list of sizes returned by this method may differ from the list seen in the Trafficking UI.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_sizes_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_sizes_insert": {
+            "main": "./lib/actions/dfareporting_sizes_insert.js",
+            "title": "Inserts a new size.",
+            "description": "Inserts a new size.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_sizes_insert.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_sizes_get": {
+            "main": "./lib/actions/dfareporting_sizes_get.js",
+            "title": "Gets one size by ID.",
+            "description": "Gets one size by ID.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_sizes_get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_subaccounts_list": {
+            "main": "./lib/actions/dfareporting_subaccounts_list.js",
+            "title": "Gets a list of subaccounts, possibly filtered. This method supports paging.",
+            "description": "Gets a list of subaccounts, possibly filtered. This method supports paging.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_subaccounts_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_subaccounts_patch": {
+            "main": "./lib/actions/dfareporting_subaccounts_patch.js",
+            "title": "Updates an existing subaccount. This method supports patch semantics.",
+            "description": "Updates an existing subaccount. This method supports patch semantics.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_subaccounts_patch.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_subaccounts_insert": {
+            "main": "./lib/actions/dfareporting_subaccounts_insert.js",
+            "title": "Inserts a new subaccount.",
+            "description": "Inserts a new subaccount.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_subaccounts_insert.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_subaccounts_update": {
+            "main": "./lib/actions/dfareporting_subaccounts_update.js",
+            "title": "Updates an existing subaccount.",
+            "description": "Updates an existing subaccount.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_subaccounts_update.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_subaccounts_get": {
+            "main": "./lib/actions/dfareporting_subaccounts_get.js",
+            "title": "Gets one subaccount by ID.",
+            "description": "Gets one subaccount by ID.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_subaccounts_get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_targetableRemarketingLists_list": {
+            "main": "./lib/actions/dfareporting_targetableRemarketingLists_list.js",
+            "title": "Retrieves a list of targetable remarketing lists, possibly filtered. This method supports paging.",
+            "description": "Retrieves a list of targetable remarketing lists, possibly filtered. This method supports paging.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_targetableRemarketingLists_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_targetableRemarketingLists_get": {
+            "main": "./lib/actions/dfareporting_targetableRemarketingLists_get.js",
+            "title": "Gets one remarketing list by ID.",
+            "description": "Gets one remarketing list by ID.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_targetableRemarketingLists_get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_targetingTemplates_list": {
+            "main": "./lib/actions/dfareporting_targetingTemplates_list.js",
+            "title": "Retrieves a list of targeting templates, optionally filtered. This method supports paging.",
+            "description": "Retrieves a list of targeting templates, optionally filtered. This method supports paging.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_targetingTemplates_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_targetingTemplates_patch": {
+            "main": "./lib/actions/dfareporting_targetingTemplates_patch.js",
+            "title": "Updates an existing targeting template. This method supports patch semantics.",
+            "description": "Updates an existing targeting template. This method supports patch semantics.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_targetingTemplates_patch.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_targetingTemplates_insert": {
+            "main": "./lib/actions/dfareporting_targetingTemplates_insert.js",
+            "title": "Inserts a new targeting template.",
+            "description": "Inserts a new targeting template.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_targetingTemplates_insert.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_targetingTemplates_update": {
+            "main": "./lib/actions/dfareporting_targetingTemplates_update.js",
+            "title": "Updates an existing targeting template.",
+            "description": "Updates an existing targeting template.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_targetingTemplates_update.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_targetingTemplates_get": {
+            "main": "./lib/actions/dfareporting_targetingTemplates_get.js",
+            "title": "Gets one targeting template by ID.",
+            "description": "Gets one targeting template by ID.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_targetingTemplates_get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_userRolePermissionGroups_list": {
+            "main": "./lib/actions/dfareporting_userRolePermissionGroups_list.js",
+            "title": "Gets a list of all supported user role permission groups.",
+            "description": "Gets a list of all supported user role permission groups.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_userRolePermissionGroups_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_userRolePermissionGroups_get": {
+            "main": "./lib/actions/dfareporting_userRolePermissionGroups_get.js",
+            "title": "Gets one user role permission group by ID.",
+            "description": "Gets one user role permission group by ID.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_userRolePermissionGroups_get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_userRolePermissions_list": {
+            "main": "./lib/actions/dfareporting_userRolePermissions_list.js",
+            "title": "Gets a list of user role permissions, possibly filtered.",
+            "description": "Gets a list of user role permissions, possibly filtered.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_userRolePermissions_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_userRolePermissions_get": {
+            "main": "./lib/actions/dfareporting_userRolePermissions_get.js",
+            "title": "Gets one user role permission by ID.",
+            "description": "Gets one user role permission by ID.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_userRolePermissions_get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_userRoles_list": {
+            "main": "./lib/actions/dfareporting_userRoles_list.js",
+            "title": "Retrieves a list of user roles, possibly filtered. This method supports paging.",
+            "description": "Retrieves a list of user roles, possibly filtered. This method supports paging.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_userRoles_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_userRoles_patch": {
+            "main": "./lib/actions/dfareporting_userRoles_patch.js",
+            "title": "Updates an existing user role. This method supports patch semantics.",
+            "description": "Updates an existing user role. This method supports patch semantics.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_userRoles_patch.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_userRoles_insert": {
+            "main": "./lib/actions/dfareporting_userRoles_insert.js",
+            "title": "Inserts a new user role.",
+            "description": "Inserts a new user role.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_userRoles_insert.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_userRoles_update": {
+            "main": "./lib/actions/dfareporting_userRoles_update.js",
+            "title": "Updates an existing user role.",
+            "description": "Updates an existing user role.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_userRoles_update.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_userRoles_delete": {
+            "main": "./lib/actions/dfareporting_userRoles_delete.js",
+            "title": "Deletes an existing user role.",
+            "description": "Deletes an existing user role.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_userRoles_delete.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_userRoles_get": {
+            "main": "./lib/actions/dfareporting_userRoles_get.js",
+            "title": "Gets one user role by ID.",
+            "description": "Gets one user role by ID.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_userRoles_get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_videoFormats_list": {
+            "main": "./lib/actions/dfareporting_videoFormats_list.js",
+            "title": "Lists available video formats.",
+            "description": "Lists available video formats.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_videoFormats_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "dfareporting_videoFormats_get": {
+            "main": "./lib/actions/dfareporting_videoFormats_get.js",
+            "title": "Gets one video format by ID.",
+            "description": "Gets one video format by ID.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/dfareporting_videoFormats_get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,54 @@
+{
+    "type": "object",
+    "properties": {
+        "id": {
+            "required": true,
+            "type": "string"
+        },
+        "profileId": {
+            "required": true,
+            "type": "string"
+        },
+        "key": {
+            "type": "string"
+        },
+        "oauth_token": {
+            "type": "string"
+        },
+        "prettyPrint": {
+            "type": "boolean",
+            "default": true
+        },
+        "quotaUser": {
+            "type": "string"
+        },
+        "userIp": {
+            "type": "string"
+        },
+        "requestBody": {
+            "description": "Groups advertisers together so that reports can be generated for the entire group at once.",
+            "properties": {
+                "accountId": {
+                    "description": "Account ID of this advertiser group. This is a read-only field that can be left blank.",
+                    "format": "int64",
+                    "type": "string"
+                },
+                "id": {
+                    "description": "ID of this advertiser group. This is a read-only, auto-generated field.",
+                    "format": "int64",
+                    "type": "string"
+                },
+                "kind": {
+                    "default": "dfareporting#advertiserGroup",
+                    "description": "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#advertiserGroup\".",
+                    "type": "string"
+                },
+                "name": {
+                    "description": "Name of this advertiser group. This is a required field and must be less than 256 characters long and unique among advertiser groups of the same account.",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

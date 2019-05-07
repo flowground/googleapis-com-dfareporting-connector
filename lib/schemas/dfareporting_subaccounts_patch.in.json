@@ -1,0 +1,62 @@
+{
+    "type": "object",
+    "properties": {
+        "id": {
+            "required": true,
+            "type": "string"
+        },
+        "profileId": {
+            "required": true,
+            "type": "string"
+        },
+        "key": {
+            "type": "string"
+        },
+        "oauth_token": {
+            "type": "string"
+        },
+        "prettyPrint": {
+            "type": "boolean",
+            "default": true
+        },
+        "quotaUser": {
+            "type": "string"
+        },
+        "userIp": {
+            "type": "string"
+        },
+        "requestBody": {
+            "description": "Contains properties of a Campaign Manager subaccount.",
+            "properties": {
+                "accountId": {
+                    "description": "ID of the account that contains this subaccount. This is a read-only field that can be left blank.",
+                    "format": "int64",
+                    "type": "string"
+                },
+                "availablePermissionIds": {
+                    "description": "IDs of the available user role permissions for this subaccount.",
+                    "items": {
+                        "format": "int64",
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "description": "ID of this subaccount. This is a read-only, auto-generated field.",
+                    "format": "int64",
+                    "type": "string"
+                },
+                "kind": {
+                    "default": "dfareporting#subaccount",
+                    "description": "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#subaccount\".",
+                    "type": "string"
+                },
+                "name": {
+                    "description": "Name of this subaccount. This is a required field. Must be less than 128 characters long and be unique among subaccounts of the same account.",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

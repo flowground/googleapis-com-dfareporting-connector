@@ -1,0 +1,211 @@
+{
+    "type": "object",
+    "properties": {
+        "id": {
+            "required": true,
+            "type": "string"
+        },
+        "profileId": {
+            "required": true,
+            "type": "string"
+        },
+        "key": {
+            "type": "string"
+        },
+        "oauth_token": {
+            "type": "string"
+        },
+        "prettyPrint": {
+            "type": "boolean",
+            "default": true
+        },
+        "quotaUser": {
+            "type": "string"
+        },
+        "userIp": {
+            "type": "string"
+        },
+        "requestBody": {
+            "description": "AccountUserProfiles contains properties of a Campaign Manager user profile. This resource is specifically for managing user profiles, whereas UserProfiles is for accessing the API.",
+            "properties": {
+                "accountId": {
+                    "description": "Account ID of the user profile. This is a read-only field that can be left blank.",
+                    "format": "int64",
+                    "type": "string"
+                },
+                "active": {
+                    "description": "Whether this user profile is active. This defaults to false, and must be set true on insert for the user profile to be usable.",
+                    "type": "boolean"
+                },
+                "advertiserFilter": {
+                    "description": "Filter that describes which advertisers are visible to the user profile.",
+                    "properties": {
+                        "kind": {
+                            "default": "dfareporting#objectFilter",
+                            "description": "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#objectFilter\".",
+                            "type": "string"
+                        },
+                        "objectIds": {
+                            "description": "Applicable when status is ASSIGNED. The user has access to objects with these object IDs.",
+                            "items": {
+                                "format": "int64",
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "status": {
+                            "description": "Status of the filter. NONE means the user has access to none of the objects. ALL means the user has access to all objects. ASSIGNED means the user has access to the objects with IDs in the objectIds list.",
+                            "enum": [
+                                "ALL",
+                                "ASSIGNED",
+                                "NONE"
+                            ],
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                },
+                "campaignFilter": {
+                    "description": "Filter that describes which campaigns are visible to the user profile.",
+                    "properties": {
+                        "kind": {
+                            "default": "dfareporting#objectFilter",
+                            "description": "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#objectFilter\".",
+                            "type": "string"
+                        },
+                        "objectIds": {
+                            "description": "Applicable when status is ASSIGNED. The user has access to objects with these object IDs.",
+                            "items": {
+                                "format": "int64",
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "status": {
+                            "description": "Status of the filter. NONE means the user has access to none of the objects. ALL means the user has access to all objects. ASSIGNED means the user has access to the objects with IDs in the objectIds list.",
+                            "enum": [
+                                "ALL",
+                                "ASSIGNED",
+                                "NONE"
+                            ],
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                },
+                "comments": {
+                    "description": "Comments for this user profile.",
+                    "type": "string"
+                },
+                "email": {
+                    "description": "Email of the user profile. The email addresss must be linked to a Google Account. This field is required on insertion and is read-only after insertion.",
+                    "type": "string"
+                },
+                "id": {
+                    "description": "ID of the user profile. This is a read-only, auto-generated field.",
+                    "format": "int64",
+                    "type": "string"
+                },
+                "kind": {
+                    "default": "dfareporting#accountUserProfile",
+                    "description": "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#accountUserProfile\".",
+                    "type": "string"
+                },
+                "locale": {
+                    "description": "Locale of the user profile. This is a required field.\nAcceptable values are:  \n- \"cs\" (Czech) \n- \"de\" (German) \n- \"en\" (English) \n- \"en-GB\" (English United Kingdom) \n- \"es\" (Spanish) \n- \"fr\" (French) \n- \"it\" (Italian) \n- \"ja\" (Japanese) \n- \"ko\" (Korean) \n- \"pl\" (Polish) \n- \"pt-BR\" (Portuguese Brazil)\n- \"ru\" (Russian) \n- \"sv\" (Swedish) \n- \"tr\" (Turkish) \n- \"zh-CN\" (Chinese Simplified) \n- \"zh-TW\" (Chinese Traditional)",
+                    "type": "string"
+                },
+                "name": {
+                    "description": "Name of the user profile. This is a required field. Must be less than 64 characters long, must be globally unique, and cannot contain whitespace or any of the following characters: \"&;\"#%,\".",
+                    "type": "string"
+                },
+                "siteFilter": {
+                    "description": "Filter that describes which sites are visible to the user profile.",
+                    "properties": {
+                        "kind": {
+                            "default": "dfareporting#objectFilter",
+                            "description": "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#objectFilter\".",
+                            "type": "string"
+                        },
+                        "objectIds": {
+                            "description": "Applicable when status is ASSIGNED. The user has access to objects with these object IDs.",
+                            "items": {
+                                "format": "int64",
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "status": {
+                            "description": "Status of the filter. NONE means the user has access to none of the objects. ALL means the user has access to all objects. ASSIGNED means the user has access to the objects with IDs in the objectIds list.",
+                            "enum": [
+                                "ALL",
+                                "ASSIGNED",
+                                "NONE"
+                            ],
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                },
+                "subaccountId": {
+                    "description": "Subaccount ID of the user profile. This is a read-only field that can be left blank.",
+                    "format": "int64",
+                    "type": "string"
+                },
+                "traffickerType": {
+                    "description": "Trafficker type of this user profile. This is a read-only field.",
+                    "enum": [
+                        "EXTERNAL_TRAFFICKER",
+                        "INTERNAL_NON_TRAFFICKER",
+                        "INTERNAL_TRAFFICKER"
+                    ],
+                    "type": "string"
+                },
+                "userAccessType": {
+                    "description": "User type of the user profile. This is a read-only field that can be left blank.",
+                    "enum": [
+                        "INTERNAL_ADMINISTRATOR",
+                        "NORMAL_USER",
+                        "READ_ONLY_SUPER_USER",
+                        "SUPER_USER"
+                    ],
+                    "type": "string"
+                },
+                "userRoleFilter": {
+                    "description": "Filter that describes which user roles are visible to the user profile.",
+                    "properties": {
+                        "kind": {
+                            "default": "dfareporting#objectFilter",
+                            "description": "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#objectFilter\".",
+                            "type": "string"
+                        },
+                        "objectIds": {
+                            "description": "Applicable when status is ASSIGNED. The user has access to objects with these object IDs.",
+                            "items": {
+                                "format": "int64",
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "status": {
+                            "description": "Status of the filter. NONE means the user has access to none of the objects. ALL means the user has access to all objects. ASSIGNED means the user has access to the objects with IDs in the objectIds list.",
+                            "enum": [
+                                "ALL",
+                                "ASSIGNED",
+                                "NONE"
+                            ],
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                },
+                "userRoleId": {
+                    "description": "User role ID of the user profile. This is a required field.",
+                    "format": "int64",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

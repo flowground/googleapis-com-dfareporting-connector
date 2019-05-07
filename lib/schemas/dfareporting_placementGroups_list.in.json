@@ -1,0 +1,115 @@
+{
+    "type": "object",
+    "properties": {
+        "advertiserIds": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "archived": {
+            "type": "boolean"
+        },
+        "campaignIds": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "contentCategoryIds": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "directorySiteIds": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "ids": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "maxEndDate": {
+            "type": "string"
+        },
+        "maxResults": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 800,
+            "default": 800
+        },
+        "maxStartDate": {
+            "type": "string"
+        },
+        "minEndDate": {
+            "type": "string"
+        },
+        "minStartDate": {
+            "type": "string"
+        },
+        "pageToken": {
+            "type": "string"
+        },
+        "placementGroupType": {
+            "type": "string",
+            "enum": [
+                "PLACEMENT_PACKAGE",
+                "PLACEMENT_ROADBLOCK"
+            ]
+        },
+        "placementStrategyIds": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "pricingTypes": {
+            "type": "array",
+            "items": {
+                "enum": [
+                    "PRICING_TYPE_CPA",
+                    "PRICING_TYPE_CPC",
+                    "PRICING_TYPE_CPM",
+                    "PRICING_TYPE_CPM_ACTIVEVIEW",
+                    "PRICING_TYPE_FLAT_RATE_CLICKS",
+                    "PRICING_TYPE_FLAT_RATE_IMPRESSIONS"
+                ],
+                "type": "string"
+            }
+        },
+        "profileId": {
+            "required": true,
+            "type": "string"
+        },
+        "searchString": {
+            "type": "string"
+        },
+        "siteIds": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "sortField": {
+            "type": "string",
+            "enum": [
+                "ID",
+                "NAME"
+            ],
+            "default": "ID"
+        },
+        "sortOrder": {
+            "type": "string",
+            "enum": [
+                "ASCENDING",
+                "DESCENDING"
+            ],
+            "default": "ASCENDING"
+        }
+    }
+}

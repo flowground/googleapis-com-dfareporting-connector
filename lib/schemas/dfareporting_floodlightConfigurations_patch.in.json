@@ -1,0 +1,393 @@
+{
+    "type": "object",
+    "properties": {
+        "id": {
+            "required": true,
+            "type": "string"
+        },
+        "profileId": {
+            "required": true,
+            "type": "string"
+        },
+        "key": {
+            "type": "string"
+        },
+        "oauth_token": {
+            "type": "string"
+        },
+        "prettyPrint": {
+            "type": "boolean",
+            "default": true
+        },
+        "quotaUser": {
+            "type": "string"
+        },
+        "userIp": {
+            "type": "string"
+        },
+        "requestBody": {
+            "description": "Contains properties of a Floodlight configuration.",
+            "properties": {
+                "accountId": {
+                    "description": "Account ID of this floodlight configuration. This is a read-only field that can be left blank.",
+                    "format": "int64",
+                    "type": "string"
+                },
+                "advertiserId": {
+                    "description": "Advertiser ID of the parent advertiser of this floodlight configuration.",
+                    "format": "int64",
+                    "type": "string"
+                },
+                "advertiserIdDimensionValue": {
+                    "description": "Dimension value for the ID of the advertiser. This is a read-only, auto-generated field.",
+                    "properties": {
+                        "dimensionName": {
+                            "description": "The name of the dimension.",
+                            "type": "string"
+                        },
+                        "etag": {
+                            "description": "The eTag of this response for caching purposes.",
+                            "type": "string"
+                        },
+                        "id": {
+                            "description": "The ID associated with the value if available.",
+                            "type": "string"
+                        },
+                        "kind": {
+                            "default": "dfareporting#dimensionValue",
+                            "description": "The kind of resource this is, in this case dfareporting#dimensionValue.",
+                            "type": "string"
+                        },
+                        "matchType": {
+                            "description": "Determines how the 'value' field is matched when filtering. If not specified, defaults to EXACT. If set to WILDCARD_EXPRESSION, '*' is allowed as a placeholder for variable length character sequences, and it can be escaped with a backslash. Note, only paid search dimensions ('dfa:paidSearch*') allow a matchType other than EXACT.",
+                            "enum": [
+                                "BEGINS_WITH",
+                                "CONTAINS",
+                                "EXACT",
+                                "WILDCARD_EXPRESSION"
+                            ],
+                            "type": "string"
+                        },
+                        "value": {
+                            "description": "The value of the dimension.",
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                },
+                "analyticsDataSharingEnabled": {
+                    "description": "Whether advertiser data is shared with Google Analytics.",
+                    "type": "boolean"
+                },
+                "customViewabilityMetric": {
+                    "description": "Custom Viewability metric for the floodlight configuration.",
+                    "properties": {
+                        "configuration": {
+                            "description": "Configuration of the custom viewability metric.",
+                            "properties": {
+                                "audible": {
+                                    "description": "Whether the video must be audible to count an impression.",
+                                    "type": "boolean"
+                                },
+                                "timeMillis": {
+                                    "description": "The time in milliseconds the video must play for the Custom Viewability Metric to count an impression. If both this and timePercent are specified, the earlier of the two will be used.",
+                                    "format": "int32",
+                                    "type": "integer"
+                                },
+                                "timePercent": {
+                                    "description": "The percentage of video that must play for the Custom Viewability Metric to count an impression. If both this and timeMillis are specified, the earlier of the two will be used.",
+                                    "format": "int32",
+                                    "type": "integer"
+                                },
+                                "viewabilityPercent": {
+                                    "description": "The percentage of video that must be on screen for the Custom Viewability Metric to count an impression.",
+                                    "format": "int32",
+                                    "type": "integer"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "id": {
+                            "description": "ID of the custom viewability metric.",
+                            "format": "int64",
+                            "type": "string"
+                        },
+                        "name": {
+                            "description": "Name of the custom viewability metric.",
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                },
+                "exposureToConversionEnabled": {
+                    "description": "Whether the exposure-to-conversion report is enabled. This report shows detailed pathway information on up to 10 of the most recent ad exposures seen by a user before converting.",
+                    "type": "boolean"
+                },
+                "firstDayOfWeek": {
+                    "description": "Day that will be counted as the first day of the week in reports. This is a required field.",
+                    "enum": [
+                        "MONDAY",
+                        "SUNDAY"
+                    ],
+                    "type": "string"
+                },
+                "id": {
+                    "description": "ID of this floodlight configuration. This is a read-only, auto-generated field.",
+                    "format": "int64",
+                    "type": "string"
+                },
+                "idDimensionValue": {
+                    "description": "Dimension value for the ID of this floodlight configuration. This is a read-only, auto-generated field.",
+                    "properties": {
+                        "dimensionName": {
+                            "description": "The name of the dimension.",
+                            "type": "string"
+                        },
+                        "etag": {
+                            "description": "The eTag of this response for caching purposes.",
+                            "type": "string"
+                        },
+                        "id": {
+                            "description": "The ID associated with the value if available.",
+                            "type": "string"
+                        },
+                        "kind": {
+                            "default": "dfareporting#dimensionValue",
+                            "description": "The kind of resource this is, in this case dfareporting#dimensionValue.",
+                            "type": "string"
+                        },
+                        "matchType": {
+                            "description": "Determines how the 'value' field is matched when filtering. If not specified, defaults to EXACT. If set to WILDCARD_EXPRESSION, '*' is allowed as a placeholder for variable length character sequences, and it can be escaped with a backslash. Note, only paid search dimensions ('dfa:paidSearch*') allow a matchType other than EXACT.",
+                            "enum": [
+                                "BEGINS_WITH",
+                                "CONTAINS",
+                                "EXACT",
+                                "WILDCARD_EXPRESSION"
+                            ],
+                            "type": "string"
+                        },
+                        "value": {
+                            "description": "The value of the dimension.",
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                },
+                "inAppAttributionTrackingEnabled": {
+                    "description": "Whether in-app attribution tracking is enabled.",
+                    "type": "boolean"
+                },
+                "kind": {
+                    "default": "dfareporting#floodlightConfiguration",
+                    "description": "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#floodlightConfiguration\".",
+                    "type": "string"
+                },
+                "lookbackConfiguration": {
+                    "description": "Lookback window settings for this floodlight configuration.",
+                    "properties": {
+                        "clickDuration": {
+                            "description": "Lookback window, in days, from the last time a given user clicked on one of your ads. If you enter 0, clicks will not be considered as triggering events for floodlight tracking. If you leave this field blank, the default value for your account will be used. Acceptable values are 0 to 90, inclusive.",
+                            "format": "int32",
+                            "type": "integer"
+                        },
+                        "postImpressionActivitiesDuration": {
+                            "description": "Lookback window, in days, from the last time a given user viewed one of your ads. If you enter 0, impressions will not be considered as triggering events for floodlight tracking. If you leave this field blank, the default value for your account will be used. Acceptable values are 0 to 90, inclusive.",
+                            "format": "int32",
+                            "type": "integer"
+                        }
+                    },
+                    "type": "object"
+                },
+                "naturalSearchConversionAttributionOption": {
+                    "description": "Types of attribution options for natural search conversions.",
+                    "enum": [
+                        "EXCLUDE_NATURAL_SEARCH_CONVERSION_ATTRIBUTION",
+                        "INCLUDE_NATURAL_SEARCH_CONVERSION_ATTRIBUTION",
+                        "INCLUDE_NATURAL_SEARCH_TIERED_CONVERSION_ATTRIBUTION"
+                    ],
+                    "type": "string"
+                },
+                "omnitureSettings": {
+                    "description": "Settings for Campaign Manager Omniture integration.",
+                    "properties": {
+                        "omnitureCostDataEnabled": {
+                            "description": "Whether placement cost data will be sent to Omniture. This property can be enabled only if omnitureIntegrationEnabled is true.",
+                            "type": "boolean"
+                        },
+                        "omnitureIntegrationEnabled": {
+                            "description": "Whether Omniture integration is enabled. This property can be enabled only when the \"Advanced Ad Serving\" account setting is enabled.",
+                            "type": "boolean"
+                        }
+                    },
+                    "type": "object"
+                },
+                "subaccountId": {
+                    "description": "Subaccount ID of this floodlight configuration. This is a read-only field that can be left blank.",
+                    "format": "int64",
+                    "type": "string"
+                },
+                "tagSettings": {
+                    "description": "Configuration settings for dynamic and image floodlight tags.",
+                    "properties": {
+                        "dynamicTagEnabled": {
+                            "description": "Whether dynamic floodlight tags are enabled.",
+                            "type": "boolean"
+                        },
+                        "imageTagEnabled": {
+                            "description": "Whether image tags are enabled.",
+                            "type": "boolean"
+                        }
+                    },
+                    "type": "object"
+                },
+                "thirdPartyAuthenticationTokens": {
+                    "description": "List of third-party authentication tokens enabled for this configuration.",
+                    "items": {
+                        "description": "Third Party Authentication Token",
+                        "properties": {
+                            "name": {
+                                "description": "Name of the third-party authentication token.",
+                                "type": "string"
+                            },
+                            "value": {
+                                "description": "Value of the third-party authentication token. This is a read-only, auto-generated field.",
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "userDefinedVariableConfigurations": {
+                    "description": "List of user defined variables enabled for this configuration.",
+                    "items": {
+                        "description": "User Defined Variable configuration.",
+                        "properties": {
+                            "dataType": {
+                                "description": "Data type for the variable. This is a required field.",
+                                "enum": [
+                                    "NUMBER",
+                                    "STRING"
+                                ],
+                                "type": "string"
+                            },
+                            "reportName": {
+                                "description": "User-friendly name for the variable which will appear in reports. This is a required field, must be less than 64 characters long, and cannot contain the following characters: \"\"<>\".",
+                                "type": "string"
+                            },
+                            "variableType": {
+                                "description": "Variable name in the tag. This is a required field.",
+                                "enum": [
+                                    "U1",
+                                    "U10",
+                                    "U100",
+                                    "U11",
+                                    "U12",
+                                    "U13",
+                                    "U14",
+                                    "U15",
+                                    "U16",
+                                    "U17",
+                                    "U18",
+                                    "U19",
+                                    "U2",
+                                    "U20",
+                                    "U21",
+                                    "U22",
+                                    "U23",
+                                    "U24",
+                                    "U25",
+                                    "U26",
+                                    "U27",
+                                    "U28",
+                                    "U29",
+                                    "U3",
+                                    "U30",
+                                    "U31",
+                                    "U32",
+                                    "U33",
+                                    "U34",
+                                    "U35",
+                                    "U36",
+                                    "U37",
+                                    "U38",
+                                    "U39",
+                                    "U4",
+                                    "U40",
+                                    "U41",
+                                    "U42",
+                                    "U43",
+                                    "U44",
+                                    "U45",
+                                    "U46",
+                                    "U47",
+                                    "U48",
+                                    "U49",
+                                    "U5",
+                                    "U50",
+                                    "U51",
+                                    "U52",
+                                    "U53",
+                                    "U54",
+                                    "U55",
+                                    "U56",
+                                    "U57",
+                                    "U58",
+                                    "U59",
+                                    "U6",
+                                    "U60",
+                                    "U61",
+                                    "U62",
+                                    "U63",
+                                    "U64",
+                                    "U65",
+                                    "U66",
+                                    "U67",
+                                    "U68",
+                                    "U69",
+                                    "U7",
+                                    "U70",
+                                    "U71",
+                                    "U72",
+                                    "U73",
+                                    "U74",
+                                    "U75",
+                                    "U76",
+                                    "U77",
+                                    "U78",
+                                    "U79",
+                                    "U8",
+                                    "U80",
+                                    "U81",
+                                    "U82",
+                                    "U83",
+                                    "U84",
+                                    "U85",
+                                    "U86",
+                                    "U87",
+                                    "U88",
+                                    "U89",
+                                    "U9",
+                                    "U90",
+                                    "U91",
+                                    "U92",
+                                    "U93",
+                                    "U94",
+                                    "U95",
+                                    "U96",
+                                    "U97",
+                                    "U98",
+                                    "U99"
+                                ],
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

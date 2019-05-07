@@ -1,0 +1,34 @@
+{
+    "type": "object",
+    "properties": {
+        "height": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 32767
+        },
+        "iabStandard": {
+            "type": "boolean"
+        },
+        "ids": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "profileId": {
+            "required": true,
+            "type": "string"
+        },
+        "width": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 32767
+        },
+        "quotaUser": {
+            "type": "string"
+        },
+        "userIp": {
+            "type": "string"
+        }
+    }
+}

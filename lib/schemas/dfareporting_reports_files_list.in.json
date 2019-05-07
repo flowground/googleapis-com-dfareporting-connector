@@ -1,0 +1,41 @@
+{
+    "type": "object",
+    "properties": {
+        "maxResults": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 10,
+            "default": 10
+        },
+        "pageToken": {
+            "type": "string"
+        },
+        "profileId": {
+            "required": true,
+            "type": "string"
+        },
+        "reportId": {
+            "required": true,
+            "type": "string"
+        },
+        "sortField": {
+            "type": "string",
+            "enum": [
+                "ID",
+                "LAST_MODIFIED_TIME"
+            ],
+            "default": "LAST_MODIFIED_TIME"
+        },
+        "sortOrder": {
+            "type": "string",
+            "enum": [
+                "ASCENDING",
+                "DESCENDING"
+            ],
+            "default": "DESCENDING"
+        },
+        "userIp": {
+            "type": "string"
+        }
+    }
+}

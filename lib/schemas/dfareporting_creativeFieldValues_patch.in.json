@@ -1,0 +1,50 @@
+{
+    "type": "object",
+    "properties": {
+        "creativeFieldId": {
+            "required": true,
+            "type": "string"
+        },
+        "id": {
+            "required": true,
+            "type": "string"
+        },
+        "profileId": {
+            "required": true,
+            "type": "string"
+        },
+        "oauth_token": {
+            "type": "string"
+        },
+        "prettyPrint": {
+            "type": "boolean",
+            "default": true
+        },
+        "quotaUser": {
+            "type": "string"
+        },
+        "userIp": {
+            "type": "string"
+        },
+        "requestBody": {
+            "description": "Contains properties of a creative field value.",
+            "properties": {
+                "id": {
+                    "description": "ID of this creative field value. This is a read-only, auto-generated field.",
+                    "format": "int64",
+                    "type": "string"
+                },
+                "kind": {
+                    "default": "dfareporting#creativeFieldValue",
+                    "description": "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#creativeFieldValue\".",
+                    "type": "string"
+                },
+                "value": {
+                    "description": "Value of this creative field value. It needs to be less than 256 characters in length and unique per creative field.",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

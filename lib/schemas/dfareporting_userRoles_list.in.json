@@ -1,0 +1,49 @@
+{
+    "type": "object",
+    "properties": {
+        "accountUserRoleOnly": {
+            "type": "boolean"
+        },
+        "ids": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "maxResults": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 1000,
+            "default": 1000
+        },
+        "pageToken": {
+            "type": "string"
+        },
+        "profileId": {
+            "required": true,
+            "type": "string"
+        },
+        "searchString": {
+            "type": "string"
+        },
+        "sortField": {
+            "type": "string",
+            "enum": [
+                "ID",
+                "NAME"
+            ],
+            "default": "ID"
+        },
+        "sortOrder": {
+            "type": "string",
+            "enum": [
+                "ASCENDING",
+                "DESCENDING"
+            ],
+            "default": "ASCENDING"
+        },
+        "subaccountId": {
+            "type": "string"
+        }
+    }
+}

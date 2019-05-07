@@ -1,0 +1,125 @@
+{
+    "type": "object",
+    "properties": {
+        "id": {
+            "required": true,
+            "type": "string"
+        },
+        "profileId": {
+            "required": true,
+            "type": "string"
+        },
+        "key": {
+            "type": "string"
+        },
+        "oauth_token": {
+            "type": "string"
+        },
+        "prettyPrint": {
+            "type": "boolean",
+            "default": true
+        },
+        "quotaUser": {
+            "type": "string"
+        },
+        "userIp": {
+            "type": "string"
+        },
+        "requestBody": {
+            "description": "Contains information about where a user's browser is taken after the user clicks an ad.",
+            "properties": {
+                "advertiserId": {
+                    "description": "Advertiser ID of this landing page. This is a required field.",
+                    "format": "int64",
+                    "type": "string"
+                },
+                "archived": {
+                    "description": "Whether this landing page has been archived.",
+                    "type": "boolean"
+                },
+                "deepLinks": {
+                    "description": "Links that will direct the user to a mobile app, if installed.",
+                    "items": {
+                        "description": "Contains information about a landing page deep link.",
+                        "properties": {
+                            "appUrl": {
+                                "description": "The URL of the mobile app being linked to.",
+                                "type": "string"
+                            },
+                            "fallbackUrl": {
+                                "description": "The fallback URL. This URL will be served to users who do not have the mobile app installed.",
+                                "type": "string"
+                            },
+                            "kind": {
+                                "default": "dfareporting#deepLink",
+                                "description": "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#deepLink\".",
+                                "type": "string"
+                            },
+                            "mobileApp": {
+                                "description": "The mobile app targeted by this deep link.",
+                                "properties": {
+                                    "directory": {
+                                        "description": "Mobile app directory.",
+                                        "enum": [
+                                            "APPLE_APP_STORE",
+                                            "GOOGLE_PLAY_STORE",
+                                            "UNKNOWN"
+                                        ],
+                                        "type": "string"
+                                    },
+                                    "id": {
+                                        "description": "ID of this mobile app.",
+                                        "type": "string"
+                                    },
+                                    "kind": {
+                                        "default": "dfareporting#mobileApp",
+                                        "description": "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#mobileApp\".",
+                                        "type": "string"
+                                    },
+                                    "publisherName": {
+                                        "description": "Publisher name.",
+                                        "type": "string"
+                                    },
+                                    "title": {
+                                        "description": "Title of this mobile app.",
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            },
+                            "remarketingListIds": {
+                                "description": "Ads served to users on these remarketing lists will use this deep link. Applicable when mobileApp.directory is APPLE_APP_STORE.",
+                                "items": {
+                                    "format": "int64",
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "description": "ID of this landing page. This is a read-only, auto-generated field.",
+                    "format": "int64",
+                    "type": "string"
+                },
+                "kind": {
+                    "default": "dfareporting#landingPage",
+                    "description": "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#landingPage\".",
+                    "type": "string"
+                },
+                "name": {
+                    "description": "Name of this landing page. This is a required field. It must be less than 256 characters long.",
+                    "type": "string"
+                },
+                "url": {
+                    "description": "URL of this landing page. This is a required field.",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

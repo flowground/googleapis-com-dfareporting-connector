@@ -1,0 +1,106 @@
+{
+    "type": "object",
+    "properties": {
+        "id": {
+            "required": true,
+            "type": "string"
+        },
+        "profileId": {
+            "required": true,
+            "type": "string"
+        },
+        "key": {
+            "type": "string"
+        },
+        "oauth_token": {
+            "type": "string"
+        },
+        "prettyPrint": {
+            "type": "boolean",
+            "default": true
+        },
+        "quotaUser": {
+            "type": "string"
+        },
+        "userIp": {
+            "type": "string"
+        },
+        "requestBody": {
+            "description": "Contains properties of a creative group.",
+            "properties": {
+                "accountId": {
+                    "description": "Account ID of this creative group. This is a read-only field that can be left blank.",
+                    "format": "int64",
+                    "type": "string"
+                },
+                "advertiserId": {
+                    "description": "Advertiser ID of this creative group. This is a required field on insertion.",
+                    "format": "int64",
+                    "type": "string"
+                },
+                "advertiserIdDimensionValue": {
+                    "description": "Dimension value for the ID of the advertiser. This is a read-only, auto-generated field.",
+                    "properties": {
+                        "dimensionName": {
+                            "description": "The name of the dimension.",
+                            "type": "string"
+                        },
+                        "etag": {
+                            "description": "The eTag of this response for caching purposes.",
+                            "type": "string"
+                        },
+                        "id": {
+                            "description": "The ID associated with the value if available.",
+                            "type": "string"
+                        },
+                        "kind": {
+                            "default": "dfareporting#dimensionValue",
+                            "description": "The kind of resource this is, in this case dfareporting#dimensionValue.",
+                            "type": "string"
+                        },
+                        "matchType": {
+                            "description": "Determines how the 'value' field is matched when filtering. If not specified, defaults to EXACT. If set to WILDCARD_EXPRESSION, '*' is allowed as a placeholder for variable length character sequences, and it can be escaped with a backslash. Note, only paid search dimensions ('dfa:paidSearch*') allow a matchType other than EXACT.",
+                            "enum": [
+                                "BEGINS_WITH",
+                                "CONTAINS",
+                                "EXACT",
+                                "WILDCARD_EXPRESSION"
+                            ],
+                            "type": "string"
+                        },
+                        "value": {
+                            "description": "The value of the dimension.",
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                },
+                "groupNumber": {
+                    "description": "Subgroup of the creative group. Assign your creative groups to a subgroup in order to filter or manage them more easily. This field is required on insertion and is read-only after insertion. Acceptable values are 1 to 2, inclusive.",
+                    "format": "int32",
+                    "type": "integer"
+                },
+                "id": {
+                    "description": "ID of this creative group. This is a read-only, auto-generated field.",
+                    "format": "int64",
+                    "type": "string"
+                },
+                "kind": {
+                    "default": "dfareporting#creativeGroup",
+                    "description": "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#creativeGroup\".",
+                    "type": "string"
+                },
+                "name": {
+                    "description": "Name of this creative group. This is a required field and must be less than 256 characters long and unique among creative groups of the same advertiser.",
+                    "type": "string"
+                },
+                "subaccountId": {
+                    "description": "Subaccount ID of this creative group. This is a read-only field that can be left blank.",
+                    "format": "int64",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

@@ -1,0 +1,192 @@
+{
+    "type": "object",
+    "properties": {
+        "id": {
+            "required": true,
+            "type": "string"
+        },
+        "profileId": {
+            "required": true,
+            "type": "string"
+        },
+        "key": {
+            "type": "string"
+        },
+        "oauth_token": {
+            "type": "string"
+        },
+        "prettyPrint": {
+            "type": "boolean",
+            "default": true
+        },
+        "quotaUser": {
+            "type": "string"
+        },
+        "userIp": {
+            "type": "string"
+        },
+        "requestBody": {
+            "description": "Contains properties of a Floodlight activity group.",
+            "properties": {
+                "accountId": {
+                    "description": "Account ID of this floodlight activity group. This is a read-only field that can be left blank.",
+                    "format": "int64",
+                    "type": "string"
+                },
+                "advertiserId": {
+                    "description": "Advertiser ID of this floodlight activity group. If this field is left blank, the value will be copied over either from the floodlight configuration's advertiser or from the existing activity group's advertiser.",
+                    "format": "int64",
+                    "type": "string"
+                },
+                "advertiserIdDimensionValue": {
+                    "description": "Dimension value for the ID of the advertiser. This is a read-only, auto-generated field.",
+                    "properties": {
+                        "dimensionName": {
+                            "description": "The name of the dimension.",
+                            "type": "string"
+                        },
+                        "etag": {
+                            "description": "The eTag of this response for caching purposes.",
+                            "type": "string"
+                        },
+                        "id": {
+                            "description": "The ID associated with the value if available.",
+                            "type": "string"
+                        },
+                        "kind": {
+                            "default": "dfareporting#dimensionValue",
+                            "description": "The kind of resource this is, in this case dfareporting#dimensionValue.",
+                            "type": "string"
+                        },
+                        "matchType": {
+                            "description": "Determines how the 'value' field is matched when filtering. If not specified, defaults to EXACT. If set to WILDCARD_EXPRESSION, '*' is allowed as a placeholder for variable length character sequences, and it can be escaped with a backslash. Note, only paid search dimensions ('dfa:paidSearch*') allow a matchType other than EXACT.",
+                            "enum": [
+                                "BEGINS_WITH",
+                                "CONTAINS",
+                                "EXACT",
+                                "WILDCARD_EXPRESSION"
+                            ],
+                            "type": "string"
+                        },
+                        "value": {
+                            "description": "The value of the dimension.",
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                },
+                "floodlightConfigurationId": {
+                    "description": "Floodlight configuration ID of this floodlight activity group. This is a required field.",
+                    "format": "int64",
+                    "type": "string"
+                },
+                "floodlightConfigurationIdDimensionValue": {
+                    "description": "Dimension value for the ID of the floodlight configuration. This is a read-only, auto-generated field.",
+                    "properties": {
+                        "dimensionName": {
+                            "description": "The name of the dimension.",
+                            "type": "string"
+                        },
+                        "etag": {
+                            "description": "The eTag of this response for caching purposes.",
+                            "type": "string"
+                        },
+                        "id": {
+                            "description": "The ID associated with the value if available.",
+                            "type": "string"
+                        },
+                        "kind": {
+                            "default": "dfareporting#dimensionValue",
+                            "description": "The kind of resource this is, in this case dfareporting#dimensionValue.",
+                            "type": "string"
+                        },
+                        "matchType": {
+                            "description": "Determines how the 'value' field is matched when filtering. If not specified, defaults to EXACT. If set to WILDCARD_EXPRESSION, '*' is allowed as a placeholder for variable length character sequences, and it can be escaped with a backslash. Note, only paid search dimensions ('dfa:paidSearch*') allow a matchType other than EXACT.",
+                            "enum": [
+                                "BEGINS_WITH",
+                                "CONTAINS",
+                                "EXACT",
+                                "WILDCARD_EXPRESSION"
+                            ],
+                            "type": "string"
+                        },
+                        "value": {
+                            "description": "The value of the dimension.",
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                },
+                "id": {
+                    "description": "ID of this floodlight activity group. This is a read-only, auto-generated field.",
+                    "format": "int64",
+                    "type": "string"
+                },
+                "idDimensionValue": {
+                    "description": "Dimension value for the ID of this floodlight activity group. This is a read-only, auto-generated field.",
+                    "properties": {
+                        "dimensionName": {
+                            "description": "The name of the dimension.",
+                            "type": "string"
+                        },
+                        "etag": {
+                            "description": "The eTag of this response for caching purposes.",
+                            "type": "string"
+                        },
+                        "id": {
+                            "description": "The ID associated with the value if available.",
+                            "type": "string"
+                        },
+                        "kind": {
+                            "default": "dfareporting#dimensionValue",
+                            "description": "The kind of resource this is, in this case dfareporting#dimensionValue.",
+                            "type": "string"
+                        },
+                        "matchType": {
+                            "description": "Determines how the 'value' field is matched when filtering. If not specified, defaults to EXACT. If set to WILDCARD_EXPRESSION, '*' is allowed as a placeholder for variable length character sequences, and it can be escaped with a backslash. Note, only paid search dimensions ('dfa:paidSearch*') allow a matchType other than EXACT.",
+                            "enum": [
+                                "BEGINS_WITH",
+                                "CONTAINS",
+                                "EXACT",
+                                "WILDCARD_EXPRESSION"
+                            ],
+                            "type": "string"
+                        },
+                        "value": {
+                            "description": "The value of the dimension.",
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                },
+                "kind": {
+                    "default": "dfareporting#floodlightActivityGroup",
+                    "description": "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#floodlightActivityGroup\".",
+                    "type": "string"
+                },
+                "name": {
+                    "description": "Name of this floodlight activity group. This is a required field. Must be less than 65 characters long and cannot contain quotes.",
+                    "type": "string"
+                },
+                "subaccountId": {
+                    "description": "Subaccount ID of this floodlight activity group. This is a read-only field that can be left blank.",
+                    "format": "int64",
+                    "type": "string"
+                },
+                "tagString": {
+                    "description": "Value of the type= parameter in the floodlight tag, which the ad servers use to identify the activity group that the activity belongs to. This is optional: if empty, a new tag string will be generated for you. This string must be 1 to 8 characters long, with valid characters being [a-z][A-Z][0-9][-][ _ ]. This tag string must also be unique among activity groups of the same floodlight configuration. This field is read-only after insertion.",
+                    "type": "string"
+                },
+                "type": {
+                    "description": "Type of the floodlight activity group. This is a required field that is read-only after insertion.",
+                    "enum": [
+                        "COUNTER",
+                        "SALE"
+                    ],
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

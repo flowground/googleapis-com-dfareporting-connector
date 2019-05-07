@@ -1,0 +1,1251 @@
+{
+    "type": "object",
+    "properties": {
+        "profileId": {
+            "required": true,
+            "type": "string"
+        },
+        "fields": {
+            "type": "string"
+        },
+        "key": {
+            "type": "string"
+        },
+        "oauth_token": {
+            "type": "string"
+        },
+        "prettyPrint": {
+            "type": "boolean",
+            "default": true
+        },
+        "quotaUser": {
+            "type": "string"
+        },
+        "userIp": {
+            "type": "string"
+        },
+        "requestBody": {
+            "description": "Contains properties of a Campaign Manager ad.",
+            "properties": {
+                "accountId": {
+                    "description": "Account ID of this ad. This is a read-only field that can be left blank.",
+                    "format": "int64",
+                    "type": "string"
+                },
+                "active": {
+                    "description": "Whether this ad is active. When true, archived must be false.",
+                    "type": "boolean"
+                },
+                "advertiserId": {
+                    "description": "Advertiser ID of this ad. This is a required field on insertion.",
+                    "format": "int64",
+                    "type": "string"
+                },
+                "advertiserIdDimensionValue": {
+                    "description": "Dimension value for the ID of the advertiser. This is a read-only, auto-generated field.",
+                    "properties": {
+                        "dimensionName": {
+                            "description": "The name of the dimension.",
+                            "type": "string"
+                        },
+                        "etag": {
+                            "description": "The eTag of this response for caching purposes.",
+                            "type": "string"
+                        },
+                        "id": {
+                            "description": "The ID associated with the value if available.",
+                            "type": "string"
+                        },
+                        "kind": {
+                            "default": "dfareporting#dimensionValue",
+                            "description": "The kind of resource this is, in this case dfareporting#dimensionValue.",
+                            "type": "string"
+                        },
+                        "matchType": {
+                            "description": "Determines how the 'value' field is matched when filtering. If not specified, defaults to EXACT. If set to WILDCARD_EXPRESSION, '*' is allowed as a placeholder for variable length character sequences, and it can be escaped with a backslash. Note, only paid search dimensions ('dfa:paidSearch*') allow a matchType other than EXACT.",
+                            "enum": [
+                                "BEGINS_WITH",
+                                "CONTAINS",
+                                "EXACT",
+                                "WILDCARD_EXPRESSION"
+                            ],
+                            "type": "string"
+                        },
+                        "value": {
+                            "description": "The value of the dimension.",
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                },
+                "archived": {
+                    "description": "Whether this ad is archived. When true, active must be false.",
+                    "type": "boolean"
+                },
+                "audienceSegmentId": {
+                    "description": "Audience segment ID that is being targeted for this ad. Applicable when type is AD_SERVING_STANDARD_AD.",
+                    "format": "int64",
+                    "type": "string"
+                },
+                "campaignId": {
+                    "description": "Campaign ID of this ad. This is a required field on insertion.",
+                    "format": "int64",
+                    "type": "string"
+                },
+                "campaignIdDimensionValue": {
+                    "description": "Dimension value for the ID of the campaign. This is a read-only, auto-generated field.",
+                    "properties": {
+                        "dimensionName": {
+                            "description": "The name of the dimension.",
+                            "type": "string"
+                        },
+                        "etag": {
+                            "description": "The eTag of this response for caching purposes.",
+                            "type": "string"
+                        },
+                        "id": {
+                            "description": "The ID associated with the value if available.",
+                            "type": "string"
+                        },
+                        "kind": {
+                            "default": "dfareporting#dimensionValue",
+                            "description": "The kind of resource this is, in this case dfareporting#dimensionValue.",
+                            "type": "string"
+                        },
+                        "matchType": {
+                            "description": "Determines how the 'value' field is matched when filtering. If not specified, defaults to EXACT. If set to WILDCARD_EXPRESSION, '*' is allowed as a placeholder for variable length character sequences, and it can be escaped with a backslash. Note, only paid search dimensions ('dfa:paidSearch*') allow a matchType other than EXACT.",
+                            "enum": [
+                                "BEGINS_WITH",
+                                "CONTAINS",
+                                "EXACT",
+                                "WILDCARD_EXPRESSION"
+                            ],
+                            "type": "string"
+                        },
+                        "value": {
+                            "description": "The value of the dimension.",
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                },
+                "clickThroughUrl": {
+                    "description": "Click-through URL for this ad. This is a required field on insertion. Applicable when type is AD_SERVING_CLICK_TRACKER.",
+                    "properties": {
+                        "computedClickThroughUrl": {
+                            "description": "Read-only convenience field representing the actual URL that will be used for this click-through. The URL is computed as follows: \n- If defaultLandingPage is enabled then the campaign's default landing page URL is assigned to this field.\n- If defaultLandingPage is not enabled and a landingPageId is specified then that landing page's URL is assigned to this field.\n- If neither of the above cases apply, then the customClickThroughUrl is assigned to this field.",
+                            "type": "string"
+                        },
+                        "customClickThroughUrl": {
+                            "description": "Custom click-through URL. Applicable if the defaultLandingPage field is set to false and the landingPageId field is left unset.",
+                            "type": "string"
+                        },
+                        "defaultLandingPage": {
+                            "description": "Whether the campaign default landing page is used.",
+                            "type": "boolean"
+                        },
+                        "landingPageId": {
+                            "description": "ID of the landing page for the click-through URL. Applicable if the defaultLandingPage field is set to false.",
+                            "format": "int64",
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                },
+                "clickThroughUrlSuffixProperties": {
+                    "description": "Click-through URL suffix properties for this ad. Applies to the URL in the ad or (if overriding ad properties) the URL in the creative.",
+                    "properties": {
+                        "clickThroughUrlSuffix": {
+                            "description": "Click-through URL suffix to apply to all ads in this entity's scope. Must be less than 128 characters long.",
+                            "type": "string"
+                        },
+                        "overrideInheritedSuffix": {
+                            "description": "Whether this entity should override the inherited click-through URL suffix with its own defined value.",
+                            "type": "boolean"
+                        }
+                    },
+                    "type": "object"
+                },
+                "comments": {
+                    "description": "Comments for this ad.",
+                    "type": "string"
+                },
+                "compatibility": {
+                    "description": "Compatibility of this ad. Applicable when type is AD_SERVING_DEFAULT_AD. DISPLAY and DISPLAY_INTERSTITIAL refer to either rendering on desktop or on mobile devices or in mobile apps for regular or interstitial ads, respectively. APP and APP_INTERSTITIAL are only used for existing default ads. New mobile placements must be assigned DISPLAY or DISPLAY_INTERSTITIAL and default ads created for those placements will be limited to those compatibility types. IN_STREAM_VIDEO refers to rendering in-stream video ads developed with the VAST standard.",
+                    "enum": [
+                        "APP",
+                        "APP_INTERSTITIAL",
+                        "DISPLAY",
+                        "DISPLAY_INTERSTITIAL",
+                        "IN_STREAM_AUDIO",
+                        "IN_STREAM_VIDEO"
+                    ],
+                    "type": "string"
+                },
+                "createInfo": {
+                    "description": "Information about the creation of this ad. This is a read-only field.",
+                    "properties": {
+                        "time": {
+                            "description": "Timestamp of the last change in milliseconds since epoch.",
+                            "format": "int64",
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                },
+                "creativeGroupAssignments": {
+                    "description": "Creative group assignments for this ad. Applicable when type is AD_SERVING_CLICK_TRACKER. Only one assignment per creative group number is allowed for a maximum of two assignments.",
+                    "items": {
+                        "description": "Creative Group Assignment.",
+                        "properties": {
+                            "creativeGroupId": {
+                                "description": "ID of the creative group to be assigned.",
+                                "format": "int64",
+                                "type": "string"
+                            },
+                            "creativeGroupNumber": {
+                                "description": "Creative group number of the creative group assignment.",
+                                "enum": [
+                                    "CREATIVE_GROUP_ONE",
+                                    "CREATIVE_GROUP_TWO"
+                                ],
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "creativeRotation": {
+                    "description": "Creative rotation for this ad. Applicable when type is AD_SERVING_DEFAULT_AD, AD_SERVING_STANDARD_AD, or AD_SERVING_TRACKING. When type is AD_SERVING_DEFAULT_AD, this field should have exactly one creativeAssignment.",
+                    "properties": {
+                        "creativeAssignments": {
+                            "description": "Creative assignments in this creative rotation.",
+                            "items": {
+                                "description": "Creative Assignment.",
+                                "properties": {
+                                    "active": {
+                                        "description": "Whether this creative assignment is active. When true, the creative will be included in the ad's rotation.",
+                                        "type": "boolean"
+                                    },
+                                    "applyEventTags": {
+                                        "description": "Whether applicable event tags should fire when this creative assignment is rendered. If this value is unset when the ad is inserted or updated, it will default to true for all creative types EXCEPT for INTERNAL_REDIRECT, INTERSTITIAL_INTERNAL_REDIRECT, and INSTREAM_VIDEO.",
+                                        "type": "boolean"
+                                    },
+                                    "clickThroughUrl": {
+                                        "description": "Click-through URL of the creative assignment.",
+                                        "properties": {
+                                            "computedClickThroughUrl": {
+                                                "description": "Read-only convenience field representing the actual URL that will be used for this click-through. The URL is computed as follows: \n- If defaultLandingPage is enabled then the campaign's default landing page URL is assigned to this field.\n- If defaultLandingPage is not enabled and a landingPageId is specified then that landing page's URL is assigned to this field.\n- If neither of the above cases apply, then the customClickThroughUrl is assigned to this field.",
+                                                "type": "string"
+                                            },
+                                            "customClickThroughUrl": {
+                                                "description": "Custom click-through URL. Applicable if the defaultLandingPage field is set to false and the landingPageId field is left unset.",
+                                                "type": "string"
+                                            },
+                                            "defaultLandingPage": {
+                                                "description": "Whether the campaign default landing page is used.",
+                                                "type": "boolean"
+                                            },
+                                            "landingPageId": {
+                                                "description": "ID of the landing page for the click-through URL. Applicable if the defaultLandingPage field is set to false.",
+                                                "format": "int64",
+                                                "type": "string"
+                                            }
+                                        },
+                                        "type": "object"
+                                    },
+                                    "companionCreativeOverrides": {
+                                        "description": "Companion creative overrides for this creative assignment. Applicable to video ads.",
+                                        "items": {
+                                            "description": "Companion Click-through override.",
+                                            "properties": {
+                                                "clickThroughUrl": {
+                                                    "description": "Click-through URL of this companion click-through override.",
+                                                    "properties": {
+                                                        "computedClickThroughUrl": {
+                                                            "description": "Read-only convenience field representing the actual URL that will be used for this click-through. The URL is computed as follows: \n- If defaultLandingPage is enabled then the campaign's default landing page URL is assigned to this field.\n- If defaultLandingPage is not enabled and a landingPageId is specified then that landing page's URL is assigned to this field.\n- If neither of the above cases apply, then the customClickThroughUrl is assigned to this field.",
+                                                            "type": "string"
+                                                        },
+                                                        "customClickThroughUrl": {
+                                                            "description": "Custom click-through URL. Applicable if the defaultLandingPage field is set to false and the landingPageId field is left unset.",
+                                                            "type": "string"
+                                                        },
+                                                        "defaultLandingPage": {
+                                                            "description": "Whether the campaign default landing page is used.",
+                                                            "type": "boolean"
+                                                        },
+                                                        "landingPageId": {
+                                                            "description": "ID of the landing page for the click-through URL. Applicable if the defaultLandingPage field is set to false.",
+                                                            "format": "int64",
+                                                            "type": "string"
+                                                        }
+                                                    },
+                                                    "type": "object"
+                                                },
+                                                "creativeId": {
+                                                    "description": "ID of the creative for this companion click-through override.",
+                                                    "format": "int64",
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "type": "object"
+                                        },
+                                        "type": "array"
+                                    },
+                                    "creativeGroupAssignments": {
+                                        "description": "Creative group assignments for this creative assignment. Only one assignment per creative group number is allowed for a maximum of two assignments.",
+                                        "items": {
+                                            "description": "Creative Group Assignment.",
+                                            "properties": {
+                                                "creativeGroupId": {
+                                                    "description": "ID of the creative group to be assigned.",
+                                                    "format": "int64",
+                                                    "type": "string"
+                                                },
+                                                "creativeGroupNumber": {
+                                                    "description": "Creative group number of the creative group assignment.",
+                                                    "enum": [
+                                                        "CREATIVE_GROUP_ONE",
+                                                        "CREATIVE_GROUP_TWO"
+                                                    ],
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "type": "object"
+                                        },
+                                        "type": "array"
+                                    },
+                                    "creativeId": {
+                                        "description": "ID of the creative to be assigned. This is a required field.",
+                                        "format": "int64",
+                                        "type": "string"
+                                    },
+                                    "creativeIdDimensionValue": {
+                                        "description": "Dimension value for the ID of the creative. This is a read-only, auto-generated field.",
+                                        "properties": {
+                                            "dimensionName": {
+                                                "description": "The name of the dimension.",
+                                                "type": "string"
+                                            },
+                                            "etag": {
+                                                "description": "The eTag of this response for caching purposes.",
+                                                "type": "string"
+                                            },
+                                            "id": {
+                                                "description": "The ID associated with the value if available.",
+                                                "type": "string"
+                                            },
+                                            "kind": {
+                                                "default": "dfareporting#dimensionValue",
+                                                "description": "The kind of resource this is, in this case dfareporting#dimensionValue.",
+                                                "type": "string"
+                                            },
+                                            "matchType": {
+                                                "description": "Determines how the 'value' field is matched when filtering. If not specified, defaults to EXACT. If set to WILDCARD_EXPRESSION, '*' is allowed as a placeholder for variable length character sequences, and it can be escaped with a backslash. Note, only paid search dimensions ('dfa:paidSearch*') allow a matchType other than EXACT.",
+                                                "enum": [
+                                                    "BEGINS_WITH",
+                                                    "CONTAINS",
+                                                    "EXACT",
+                                                    "WILDCARD_EXPRESSION"
+                                                ],
+                                                "type": "string"
+                                            },
+                                            "value": {
+                                                "description": "The value of the dimension.",
+                                                "type": "string"
+                                            }
+                                        },
+                                        "type": "object"
+                                    },
+                                    "endTime": {
+                                        "description": "Date and time that the assigned creative should stop serving. Must be later than the start time.",
+                                        "format": "date-time",
+                                        "type": "string"
+                                    },
+                                    "richMediaExitOverrides": {
+                                        "description": "Rich media exit overrides for this creative assignment.\nApplicable when the creative type is any of the following: \n- DISPLAY\n- RICH_MEDIA_INPAGE\n- RICH_MEDIA_INPAGE_FLOATING\n- RICH_MEDIA_IM_EXPAND\n- RICH_MEDIA_EXPANDING\n- RICH_MEDIA_INTERSTITIAL_FLOAT\n- RICH_MEDIA_MOBILE_IN_APP\n- RICH_MEDIA_MULTI_FLOATING\n- RICH_MEDIA_PEEL_DOWN\n- VPAID_LINEAR\n- VPAID_NON_LINEAR",
+                                        "items": {
+                                            "description": "Rich Media Exit Override.",
+                                            "properties": {
+                                                "clickThroughUrl": {
+                                                    "description": "Click-through URL of this rich media exit override. Applicable if the enabled field is set to true.",
+                                                    "properties": {
+                                                        "computedClickThroughUrl": {
+                                                            "description": "Read-only convenience field representing the actual URL that will be used for this click-through. The URL is computed as follows: \n- If defaultLandingPage is enabled then the campaign's default landing page URL is assigned to this field.\n- If defaultLandingPage is not enabled and a landingPageId is specified then that landing page's URL is assigned to this field.\n- If neither of the above cases apply, then the customClickThroughUrl is assigned to this field.",
+                                                            "type": "string"
+                                                        },
+                                                        "customClickThroughUrl": {
+                                                            "description": "Custom click-through URL. Applicable if the defaultLandingPage field is set to false and the landingPageId field is left unset.",
+                                                            "type": "string"
+                                                        },
+                                                        "defaultLandingPage": {
+                                                            "description": "Whether the campaign default landing page is used.",
+                                                            "type": "boolean"
+                                                        },
+                                                        "landingPageId": {
+                                                            "description": "ID of the landing page for the click-through URL. Applicable if the defaultLandingPage field is set to false.",
+                                                            "format": "int64",
+                                                            "type": "string"
+                                                        }
+                                                    },
+                                                    "type": "object"
+                                                },
+                                                "enabled": {
+                                                    "description": "Whether to use the clickThroughUrl. If false, the creative-level exit will be used.",
+                                                    "type": "boolean"
+                                                },
+                                                "exitId": {
+                                                    "description": "ID for the override to refer to a specific exit in the creative.",
+                                                    "format": "int64",
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "type": "object"
+                                        },
+                                        "type": "array"
+                                    },
+                                    "sequence": {
+                                        "description": "Sequence number of the creative assignment, applicable when the rotation type is CREATIVE_ROTATION_TYPE_SEQUENTIAL. Acceptable values are 1 to 65535, inclusive.",
+                                        "format": "int32",
+                                        "type": "integer"
+                                    },
+                                    "sslCompliant": {
+                                        "description": "Whether the creative to be assigned is SSL-compliant. This is a read-only field that is auto-generated when the ad is inserted or updated.",
+                                        "type": "boolean"
+                                    },
+                                    "startTime": {
+                                        "description": "Date and time that the assigned creative should start serving.",
+                                        "format": "date-time",
+                                        "type": "string"
+                                    },
+                                    "weight": {
+                                        "description": "Weight of the creative assignment, applicable when the rotation type is CREATIVE_ROTATION_TYPE_RANDOM. Value must be greater than or equal to 1.",
+                                        "format": "int32",
+                                        "type": "integer"
+                                    }
+                                },
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "creativeOptimizationConfigurationId": {
+                            "description": "Creative optimization configuration that is used by this ad. It should refer to one of the existing optimization configurations in the ad's campaign. If it is unset or set to 0, then the campaign's default optimization configuration will be used for this ad.",
+                            "format": "int64",
+                            "type": "string"
+                        },
+                        "type": {
+                            "description": "Type of creative rotation. Can be used to specify whether to use sequential or random rotation.",
+                            "enum": [
+                                "CREATIVE_ROTATION_TYPE_RANDOM",
+                                "CREATIVE_ROTATION_TYPE_SEQUENTIAL"
+                            ],
+                            "type": "string"
+                        },
+                        "weightCalculationStrategy": {
+                            "description": "Strategy for calculating weights. Used with CREATIVE_ROTATION_TYPE_RANDOM.",
+                            "enum": [
+                                "WEIGHT_STRATEGY_CUSTOM",
+                                "WEIGHT_STRATEGY_EQUAL",
+                                "WEIGHT_STRATEGY_HIGHEST_CTR",
+                                "WEIGHT_STRATEGY_OPTIMIZED"
+                            ],
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                },
+                "dayPartTargeting": {
+                    "description": "Time and day targeting information for this ad. This field must be left blank if the ad is using a targeting template. Applicable when type is AD_SERVING_STANDARD_AD.",
+                    "properties": {
+                        "daysOfWeek": {
+                            "description": "Days of the week when the ad will serve.\n\nAcceptable values are:\n- \"SUNDAY\"\n- \"MONDAY\"\n- \"TUESDAY\"\n- \"WEDNESDAY\"\n- \"THURSDAY\"\n- \"FRIDAY\"\n- \"SATURDAY\"",
+                            "items": {
+                                "enum": [
+                                    "FRIDAY",
+                                    "MONDAY",
+                                    "SATURDAY",
+                                    "SUNDAY",
+                                    "THURSDAY",
+                                    "TUESDAY",
+                                    "WEDNESDAY"
+                                ],
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "hoursOfDay": {
+                            "description": "Hours of the day when the ad will serve, where 0 is midnight to 1 AM and 23 is 11 PM to midnight. Can be specified with days of week, in which case the ad would serve during these hours on the specified days. For example if Monday, Wednesday, Friday are the days of week specified and 9-10am, 3-5pm (hours 9, 15, and 16) is specified, the ad would serve Monday, Wednesdays, and Fridays at 9-10am and 3-5pm. Acceptable values are 0 to 23, inclusive.",
+                            "items": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "type": "array"
+                        },
+                        "userLocalTime": {
+                            "description": "Whether or not to use the user's local time. If false, the America/New York time zone applies.",
+                            "type": "boolean"
+                        }
+                    },
+                    "type": "object"
+                },
+                "defaultClickThroughEventTagProperties": {
+                    "description": "Default click-through event tag properties for this ad.",
+                    "properties": {
+                        "defaultClickThroughEventTagId": {
+                            "description": "ID of the click-through event tag to apply to all ads in this entity's scope.",
+                            "format": "int64",
+                            "type": "string"
+                        },
+                        "overrideInheritedEventTag": {
+                            "description": "Whether this entity should override the inherited default click-through event tag with its own defined value.",
+                            "type": "boolean"
+                        }
+                    },
+                    "type": "object"
+                },
+                "deliverySchedule": {
+                    "description": "Delivery schedule information for this ad. Applicable when type is AD_SERVING_STANDARD_AD or AD_SERVING_TRACKING. This field along with subfields priority and impressionRatio are required on insertion when type is AD_SERVING_STANDARD_AD.",
+                    "properties": {
+                        "frequencyCap": {
+                            "description": "Limit on the number of times an individual user can be served the ad within a specified period of time.",
+                            "properties": {
+                                "duration": {
+                                    "description": "Duration of time, in seconds, for this frequency cap. The maximum duration is 90 days. Acceptable values are 1 to 7776000, inclusive.",
+                                    "format": "int64",
+                                    "type": "string"
+                                },
+                                "impressions": {
+                                    "description": "Number of times an individual user can be served the ad within the specified duration. Acceptable values are 1 to 15, inclusive.",
+                                    "format": "int64",
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "hardCutoff": {
+                            "description": "Whether or not hard cutoff is enabled. If true, the ad will not serve after the end date and time. Otherwise the ad will continue to be served until it has reached its delivery goals.",
+                            "type": "boolean"
+                        },
+                        "impressionRatio": {
+                            "description": "Impression ratio for this ad. This ratio determines how often each ad is served relative to the others. For example, if ad A has an impression ratio of 1 and ad B has an impression ratio of 3, then Campaign Manager will serve ad B three times as often as ad A. Acceptable values are 1 to 10, inclusive.",
+                            "format": "int64",
+                            "type": "string"
+                        },
+                        "priority": {
+                            "description": "Serving priority of an ad, with respect to other ads. The lower the priority number, the greater the priority with which it is served.",
+                            "enum": [
+                                "AD_PRIORITY_01",
+                                "AD_PRIORITY_02",
+                                "AD_PRIORITY_03",
+                                "AD_PRIORITY_04",
+                                "AD_PRIORITY_05",
+                                "AD_PRIORITY_06",
+                                "AD_PRIORITY_07",
+                                "AD_PRIORITY_08",
+                                "AD_PRIORITY_09",
+                                "AD_PRIORITY_10",
+                                "AD_PRIORITY_11",
+                                "AD_PRIORITY_12",
+                                "AD_PRIORITY_13",
+                                "AD_PRIORITY_14",
+                                "AD_PRIORITY_15",
+                                "AD_PRIORITY_16"
+                            ],
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                },
+                "dynamicClickTracker": {
+                    "description": "Whether this ad is a dynamic click tracker. Applicable when type is AD_SERVING_CLICK_TRACKER. This is a required field on insert, and is read-only after insert.",
+                    "type": "boolean"
+                },
+                "endTime": {
+                    "description": "Date and time that this ad should stop serving. Must be later than the start time. This is a required field on insertion.",
+                    "format": "date-time",
+                    "type": "string"
+                },
+                "eventTagOverrides": {
+                    "description": "Event tag overrides for this ad.",
+                    "items": {
+                        "description": "Event tag override information.",
+                        "properties": {
+                            "enabled": {
+                                "description": "Whether this override is enabled.",
+                                "type": "boolean"
+                            },
+                            "id": {
+                                "description": "ID of this event tag override. This is a read-only, auto-generated field.",
+                                "format": "int64",
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "geoTargeting": {
+                    "description": "Geographical targeting information for this ad. This field must be left blank if the ad is using a targeting template. Applicable when type is AD_SERVING_STANDARD_AD.",
+                    "properties": {
+                        "cities": {
+                            "description": "Cities to be targeted. For each city only dartId is required. The other fields are populated automatically when the ad is inserted or updated. If targeting a city, do not target or exclude the country of the city, and do not target the metro or region of the city.",
+                            "items": {
+                                "description": "Contains information about a city that can be targeted by ads.",
+                                "properties": {
+                                    "countryCode": {
+                                        "description": "Country code of the country to which this city belongs.",
+                                        "type": "string"
+                                    },
+                                    "countryDartId": {
+                                        "description": "DART ID of the country to which this city belongs.",
+                                        "format": "int64",
+                                        "type": "string"
+                                    },
+                                    "dartId": {
+                                        "description": "DART ID of this city. This is the ID used for targeting and generating reports.",
+                                        "format": "int64",
+                                        "type": "string"
+                                    },
+                                    "kind": {
+                                        "default": "dfareporting#city",
+                                        "description": "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#city\".",
+                                        "type": "string"
+                                    },
+                                    "metroCode": {
+                                        "description": "Metro region code of the metro region (DMA) to which this city belongs.",
+                                        "type": "string"
+                                    },
+                                    "metroDmaId": {
+                                        "description": "ID of the metro region (DMA) to which this city belongs.",
+                                        "format": "int64",
+                                        "type": "string"
+                                    },
+                                    "name": {
+                                        "description": "Name of this city.",
+                                        "type": "string"
+                                    },
+                                    "regionCode": {
+                                        "description": "Region code of the region to which this city belongs.",
+                                        "type": "string"
+                                    },
+                                    "regionDartId": {
+                                        "description": "DART ID of the region to which this city belongs.",
+                                        "format": "int64",
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "countries": {
+                            "description": "Countries to be targeted or excluded from targeting, depending on the setting of the excludeCountries field. For each country only dartId is required. The other fields are populated automatically when the ad is inserted or updated. If targeting or excluding a country, do not target regions, cities, metros, or postal codes in the same country.",
+                            "items": {
+                                "description": "Contains information about a country that can be targeted by ads.",
+                                "properties": {
+                                    "countryCode": {
+                                        "description": "Country code.",
+                                        "type": "string"
+                                    },
+                                    "dartId": {
+                                        "description": "DART ID of this country. This is the ID used for targeting and generating reports.",
+                                        "format": "int64",
+                                        "type": "string"
+                                    },
+                                    "kind": {
+                                        "default": "dfareporting#country",
+                                        "description": "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#country\".",
+                                        "type": "string"
+                                    },
+                                    "name": {
+                                        "description": "Name of this country.",
+                                        "type": "string"
+                                    },
+                                    "sslEnabled": {
+                                        "description": "Whether ad serving supports secure servers in this country.",
+                                        "type": "boolean"
+                                    }
+                                },
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "excludeCountries": {
+                            "description": "Whether or not to exclude the countries in the countries field from targeting. If false, the countries field refers to countries which will be targeted by the ad.",
+                            "type": "boolean"
+                        },
+                        "metros": {
+                            "description": "Metros to be targeted. For each metro only dmaId is required. The other fields are populated automatically when the ad is inserted or updated. If targeting a metro, do not target or exclude the country of the metro.",
+                            "items": {
+                                "description": "Contains information about a metro region that can be targeted by ads.",
+                                "properties": {
+                                    "countryCode": {
+                                        "description": "Country code of the country to which this metro region belongs.",
+                                        "type": "string"
+                                    },
+                                    "countryDartId": {
+                                        "description": "DART ID of the country to which this metro region belongs.",
+                                        "format": "int64",
+                                        "type": "string"
+                                    },
+                                    "dartId": {
+                                        "description": "DART ID of this metro region.",
+                                        "format": "int64",
+                                        "type": "string"
+                                    },
+                                    "dmaId": {
+                                        "description": "DMA ID of this metro region. This is the ID used for targeting and generating reports, and is equivalent to metro_code.",
+                                        "format": "int64",
+                                        "type": "string"
+                                    },
+                                    "kind": {
+                                        "default": "dfareporting#metro",
+                                        "description": "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#metro\".",
+                                        "type": "string"
+                                    },
+                                    "metroCode": {
+                                        "description": "Metro code of this metro region. This is equivalent to dma_id.",
+                                        "type": "string"
+                                    },
+                                    "name": {
+                                        "description": "Name of this metro region.",
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "postalCodes": {
+                            "description": "Postal codes to be targeted. For each postal code only id is required. The other fields are populated automatically when the ad is inserted or updated. If targeting a postal code, do not target or exclude the country of the postal code.",
+                            "items": {
+                                "description": "Contains information about a postal code that can be targeted by ads.",
+                                "properties": {
+                                    "code": {
+                                        "description": "Postal code. This is equivalent to the id field.",
+                                        "type": "string"
+                                    },
+                                    "countryCode": {
+                                        "description": "Country code of the country to which this postal code belongs.",
+                                        "type": "string"
+                                    },
+                                    "countryDartId": {
+                                        "description": "DART ID of the country to which this postal code belongs.",
+                                        "format": "int64",
+                                        "type": "string"
+                                    },
+                                    "id": {
+                                        "description": "ID of this postal code.",
+                                        "type": "string"
+                                    },
+                                    "kind": {
+                                        "default": "dfareporting#postalCode",
+                                        "description": "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#postalCode\".",
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "regions": {
+                            "description": "Regions to be targeted. For each region only dartId is required. The other fields are populated automatically when the ad is inserted or updated. If targeting a region, do not target or exclude the country of the region.",
+                            "items": {
+                                "description": "Contains information about a region that can be targeted by ads.",
+                                "properties": {
+                                    "countryCode": {
+                                        "description": "Country code of the country to which this region belongs.",
+                                        "type": "string"
+                                    },
+                                    "countryDartId": {
+                                        "description": "DART ID of the country to which this region belongs.",
+                                        "format": "int64",
+                                        "type": "string"
+                                    },
+                                    "dartId": {
+                                        "description": "DART ID of this region.",
+                                        "format": "int64",
+                                        "type": "string"
+                                    },
+                                    "kind": {
+                                        "default": "dfareporting#region",
+                                        "description": "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#region\".",
+                                        "type": "string"
+                                    },
+                                    "name": {
+                                        "description": "Name of this region.",
+                                        "type": "string"
+                                    },
+                                    "regionCode": {
+                                        "description": "Region code.",
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "id": {
+                    "description": "ID of this ad. This is a read-only, auto-generated field.",
+                    "format": "int64",
+                    "type": "string"
+                },
+                "idDimensionValue": {
+                    "description": "Dimension value for the ID of this ad. This is a read-only, auto-generated field.",
+                    "properties": {
+                        "dimensionName": {
+                            "description": "The name of the dimension.",
+                            "type": "string"
+                        },
+                        "etag": {
+                            "description": "The eTag of this response for caching purposes.",
+                            "type": "string"
+                        },
+                        "id": {
+                            "description": "The ID associated with the value if available.",
+                            "type": "string"
+                        },
+                        "kind": {
+                            "default": "dfareporting#dimensionValue",
+                            "description": "The kind of resource this is, in this case dfareporting#dimensionValue.",
+                            "type": "string"
+                        },
+                        "matchType": {
+                            "description": "Determines how the 'value' field is matched when filtering. If not specified, defaults to EXACT. If set to WILDCARD_EXPRESSION, '*' is allowed as a placeholder for variable length character sequences, and it can be escaped with a backslash. Note, only paid search dimensions ('dfa:paidSearch*') allow a matchType other than EXACT.",
+                            "enum": [
+                                "BEGINS_WITH",
+                                "CONTAINS",
+                                "EXACT",
+                                "WILDCARD_EXPRESSION"
+                            ],
+                            "type": "string"
+                        },
+                        "value": {
+                            "description": "The value of the dimension.",
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                },
+                "keyValueTargetingExpression": {
+                    "description": "Key-value targeting information for this ad. This field must be left blank if the ad is using a targeting template. Applicable when type is AD_SERVING_STANDARD_AD.",
+                    "properties": {
+                        "expression": {
+                            "description": "Keyword expression being targeted by the ad.",
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                },
+                "kind": {
+                    "default": "dfareporting#ad",
+                    "description": "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#ad\".",
+                    "type": "string"
+                },
+                "languageTargeting": {
+                    "description": "Language targeting information for this ad. This field must be left blank if the ad is using a targeting template. Applicable when type is AD_SERVING_STANDARD_AD.",
+                    "properties": {
+                        "languages": {
+                            "description": "Languages that this ad targets. For each language only languageId is required. The other fields are populated automatically when the ad is inserted or updated.",
+                            "items": {
+                                "description": "Contains information about a language that can be targeted by ads.",
+                                "properties": {
+                                    "id": {
+                                        "description": "Language ID of this language. This is the ID used for targeting and generating reports.",
+                                        "format": "int64",
+                                        "type": "string"
+                                    },
+                                    "kind": {
+                                        "default": "dfareporting#language",
+                                        "description": "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#language\".",
+                                        "type": "string"
+                                    },
+                                    "languageCode": {
+                                        "description": "Format of language code is an ISO 639 two-letter language code optionally followed by an underscore followed by an ISO 3166 code. Examples are \"en\" for English or \"zh_CN\" for Simplified Chinese.",
+                                        "type": "string"
+                                    },
+                                    "name": {
+                                        "description": "Name of this language.",
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "lastModifiedInfo": {
+                    "description": "Information about the most recent modification of this ad. This is a read-only field.",
+                    "properties": {
+                        "time": {
+                            "description": "Timestamp of the last change in milliseconds since epoch.",
+                            "format": "int64",
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                },
+                "name": {
+                    "description": "Name of this ad. This is a required field and must be less than 256 characters long.",
+                    "type": "string"
+                },
+                "placementAssignments": {
+                    "description": "Placement assignments for this ad.",
+                    "items": {
+                        "description": "Placement Assignment.",
+                        "properties": {
+                            "active": {
+                                "description": "Whether this placement assignment is active. When true, the placement will be included in the ad's rotation.",
+                                "type": "boolean"
+                            },
+                            "placementId": {
+                                "description": "ID of the placement to be assigned. This is a required field.",
+                                "format": "int64",
+                                "type": "string"
+                            },
+                            "placementIdDimensionValue": {
+                                "description": "Dimension value for the ID of the placement. This is a read-only, auto-generated field.",
+                                "properties": {
+                                    "dimensionName": {
+                                        "description": "The name of the dimension.",
+                                        "type": "string"
+                                    },
+                                    "etag": {
+                                        "description": "The eTag of this response for caching purposes.",
+                                        "type": "string"
+                                    },
+                                    "id": {
+                                        "description": "The ID associated with the value if available.",
+                                        "type": "string"
+                                    },
+                                    "kind": {
+                                        "default": "dfareporting#dimensionValue",
+                                        "description": "The kind of resource this is, in this case dfareporting#dimensionValue.",
+                                        "type": "string"
+                                    },
+                                    "matchType": {
+                                        "description": "Determines how the 'value' field is matched when filtering. If not specified, defaults to EXACT. If set to WILDCARD_EXPRESSION, '*' is allowed as a placeholder for variable length character sequences, and it can be escaped with a backslash. Note, only paid search dimensions ('dfa:paidSearch*') allow a matchType other than EXACT.",
+                                        "enum": [
+                                            "BEGINS_WITH",
+                                            "CONTAINS",
+                                            "EXACT",
+                                            "WILDCARD_EXPRESSION"
+                                        ],
+                                        "type": "string"
+                                    },
+                                    "value": {
+                                        "description": "The value of the dimension.",
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            },
+                            "sslRequired": {
+                                "description": "Whether the placement to be assigned requires SSL. This is a read-only field that is auto-generated when the ad is inserted or updated.",
+                                "type": "boolean"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "remarketingListExpression": {
+                    "description": "Remarketing list targeting expression for this ad. This field must be left blank if the ad is using a targeting template. Applicable when type is AD_SERVING_STANDARD_AD.",
+                    "properties": {
+                        "expression": {
+                            "description": "Expression describing which lists are being targeted by the ad.",
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                },
+                "size": {
+                    "description": "Size of this ad. Applicable when type is AD_SERVING_DEFAULT_AD.",
+                    "properties": {
+                        "height": {
+                            "description": "Height of this size. Acceptable values are 0 to 32767, inclusive.",
+                            "format": "int32",
+                            "type": "integer"
+                        },
+                        "iab": {
+                            "description": "IAB standard size. This is a read-only, auto-generated field.",
+                            "type": "boolean"
+                        },
+                        "id": {
+                            "description": "ID of this size. This is a read-only, auto-generated field.",
+                            "format": "int64",
+                            "type": "string"
+                        },
+                        "kind": {
+                            "default": "dfareporting#size",
+                            "description": "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#size\".",
+                            "type": "string"
+                        },
+                        "width": {
+                            "description": "Width of this size. Acceptable values are 0 to 32767, inclusive.",
+                            "format": "int32",
+                            "type": "integer"
+                        }
+                    },
+                    "type": "object"
+                },
+                "sslCompliant": {
+                    "description": "Whether this ad is ssl compliant. This is a read-only field that is auto-generated when the ad is inserted or updated.",
+                    "type": "boolean"
+                },
+                "sslRequired": {
+                    "description": "Whether this ad requires ssl. This is a read-only field that is auto-generated when the ad is inserted or updated.",
+                    "type": "boolean"
+                },
+                "startTime": {
+                    "description": "Date and time that this ad should start serving. If creating an ad, this field must be a time in the future. This is a required field on insertion.",
+                    "format": "date-time",
+                    "type": "string"
+                },
+                "subaccountId": {
+                    "description": "Subaccount ID of this ad. This is a read-only field that can be left blank.",
+                    "format": "int64",
+                    "type": "string"
+                },
+                "targetingTemplateId": {
+                    "description": "Targeting template ID, used to apply preconfigured targeting information to this ad. This cannot be set while any of dayPartTargeting, geoTargeting, keyValueTargetingExpression, languageTargeting, remarketingListExpression, or technologyTargeting are set. Applicable when type is AD_SERVING_STANDARD_AD.",
+                    "format": "int64",
+                    "type": "string"
+                },
+                "technologyTargeting": {
+                    "description": "Technology platform targeting information for this ad. This field must be left blank if the ad is using a targeting template. Applicable when type is AD_SERVING_STANDARD_AD.",
+                    "properties": {
+                        "browsers": {
+                            "description": "Browsers that this ad targets. For each browser either set browserVersionId or dartId along with the version numbers. If both are specified, only browserVersionId will be used. The other fields are populated automatically when the ad is inserted or updated.",
+                            "items": {
+                                "description": "Contains information about a browser that can be targeted by ads.",
+                                "properties": {
+                                    "browserVersionId": {
+                                        "description": "ID referring to this grouping of browser and version numbers. This is the ID used for targeting.",
+                                        "format": "int64",
+                                        "type": "string"
+                                    },
+                                    "dartId": {
+                                        "description": "DART ID of this browser. This is the ID used when generating reports.",
+                                        "format": "int64",
+                                        "type": "string"
+                                    },
+                                    "kind": {
+                                        "default": "dfareporting#browser",
+                                        "description": "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#browser\".",
+                                        "type": "string"
+                                    },
+                                    "majorVersion": {
+                                        "description": "Major version number (leftmost number) of this browser. For example, for Chrome 5.0.376.86 beta, this field should be set to 5. An asterisk (*) may be used to target any version number, and a question mark (?) may be used to target cases where the version number cannot be identified. For example, Chrome *.* targets any version of Chrome: 1.2, 2.5, 3.5, and so on. Chrome 3.* targets Chrome 3.1, 3.5, but not 4.0. Firefox ?.? targets cases where the ad server knows the browser is Firefox but can't tell which version it is.",
+                                        "type": "string"
+                                    },
+                                    "minorVersion": {
+                                        "description": "Minor version number (number after first dot on left) of this browser. For example, for Chrome 5.0.375.86 beta, this field should be set to 0. An asterisk (*) may be used to target any version number, and a question mark (?) may be used to target cases where the version number cannot be identified. For example, Chrome *.* targets any version of Chrome: 1.2, 2.5, 3.5, and so on. Chrome 3.* targets Chrome 3.1, 3.5, but not 4.0. Firefox ?.? targets cases where the ad server knows the browser is Firefox but can't tell which version it is.",
+                                        "type": "string"
+                                    },
+                                    "name": {
+                                        "description": "Name of this browser.",
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "connectionTypes": {
+                            "description": "Connection types that this ad targets. For each connection type only id is required. The other fields are populated automatically when the ad is inserted or updated.",
+                            "items": {
+                                "description": "Contains information about an internet connection type that can be targeted by ads. Clients can use the connection type to target mobile vs. broadband users.",
+                                "properties": {
+                                    "id": {
+                                        "description": "ID of this connection type.",
+                                        "format": "int64",
+                                        "type": "string"
+                                    },
+                                    "kind": {
+                                        "default": "dfareporting#connectionType",
+                                        "description": "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#connectionType\".",
+                                        "type": "string"
+                                    },
+                                    "name": {
+                                        "description": "Name of this connection type.",
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "mobileCarriers": {
+                            "description": "Mobile carriers that this ad targets. For each mobile carrier only id is required, and the other fields are populated automatically when the ad is inserted or updated. If targeting a mobile carrier, do not set targeting for any zip codes.",
+                            "items": {
+                                "description": "Contains information about a mobile carrier that can be targeted by ads.",
+                                "properties": {
+                                    "countryCode": {
+                                        "description": "Country code of the country to which this mobile carrier belongs.",
+                                        "type": "string"
+                                    },
+                                    "countryDartId": {
+                                        "description": "DART ID of the country to which this mobile carrier belongs.",
+                                        "format": "int64",
+                                        "type": "string"
+                                    },
+                                    "id": {
+                                        "description": "ID of this mobile carrier.",
+                                        "format": "int64",
+                                        "type": "string"
+                                    },
+                                    "kind": {
+                                        "default": "dfareporting#mobileCarrier",
+                                        "description": "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#mobileCarrier\".",
+                                        "type": "string"
+                                    },
+                                    "name": {
+                                        "description": "Name of this mobile carrier.",
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "operatingSystemVersions": {
+                            "description": "Operating system versions that this ad targets. To target all versions, use operatingSystems. For each operating system version, only id is required. The other fields are populated automatically when the ad is inserted or updated. If targeting an operating system version, do not set targeting for the corresponding operating system in operatingSystems.",
+                            "items": {
+                                "description": "Contains information about a particular version of an operating system that can be targeted by ads.",
+                                "properties": {
+                                    "id": {
+                                        "description": "ID of this operating system version.",
+                                        "format": "int64",
+                                        "type": "string"
+                                    },
+                                    "kind": {
+                                        "default": "dfareporting#operatingSystemVersion",
+                                        "description": "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#operatingSystemVersion\".",
+                                        "type": "string"
+                                    },
+                                    "majorVersion": {
+                                        "description": "Major version (leftmost number) of this operating system version.",
+                                        "type": "string"
+                                    },
+                                    "minorVersion": {
+                                        "description": "Minor version (number after the first dot) of this operating system version.",
+                                        "type": "string"
+                                    },
+                                    "name": {
+                                        "description": "Name of this operating system version.",
+                                        "type": "string"
+                                    },
+                                    "operatingSystem": {
+                                        "description": "Operating system of this operating system version.",
+                                        "properties": {
+                                            "dartId": {
+                                                "description": "DART ID of this operating system. This is the ID used for targeting.",
+                                                "format": "int64",
+                                                "type": "string"
+                                            },
+                                            "desktop": {
+                                                "description": "Whether this operating system is for desktop.",
+                                                "type": "boolean"
+                                            },
+                                            "kind": {
+                                                "default": "dfareporting#operatingSystem",
+                                                "description": "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#operatingSystem\".",
+                                                "type": "string"
+                                            },
+                                            "mobile": {
+                                                "description": "Whether this operating system is for mobile.",
+                                                "type": "boolean"
+                                            },
+                                            "name": {
+                                                "description": "Name of this operating system.",
+                                                "type": "string"
+                                            }
+                                        },
+                                        "type": "object"
+                                    }
+                                },
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "operatingSystems": {
+                            "description": "Operating systems that this ad targets. To target specific versions, use operatingSystemVersions. For each operating system only dartId is required. The other fields are populated automatically when the ad is inserted or updated. If targeting an operating system, do not set targeting for operating system versions for the same operating system.",
+                            "items": {
+                                "description": "Contains information about an operating system that can be targeted by ads.",
+                                "properties": {
+                                    "dartId": {
+                                        "description": "DART ID of this operating system. This is the ID used for targeting.",
+                                        "format": "int64",
+                                        "type": "string"
+                                    },
+                                    "desktop": {
+                                        "description": "Whether this operating system is for desktop.",
+                                        "type": "boolean"
+                                    },
+                                    "kind": {
+                                        "default": "dfareporting#operatingSystem",
+                                        "description": "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#operatingSystem\".",
+                                        "type": "string"
+                                    },
+                                    "mobile": {
+                                        "description": "Whether this operating system is for mobile.",
+                                        "type": "boolean"
+                                    },
+                                    "name": {
+                                        "description": "Name of this operating system.",
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "platformTypes": {
+                            "description": "Platform types that this ad targets. For example, desktop, mobile, or tablet. For each platform type, only id is required, and the other fields are populated automatically when the ad is inserted or updated.",
+                            "items": {
+                                "description": "Contains information about a platform type that can be targeted by ads.",
+                                "properties": {
+                                    "id": {
+                                        "description": "ID of this platform type.",
+                                        "format": "int64",
+                                        "type": "string"
+                                    },
+                                    "kind": {
+                                        "default": "dfareporting#platformType",
+                                        "description": "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#platformType\".",
+                                        "type": "string"
+                                    },
+                                    "name": {
+                                        "description": "Name of this platform type.",
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "type": {
+                    "description": "Type of ad. This is a required field on insertion. Note that default ads (AD_SERVING_DEFAULT_AD) cannot be created directly (see Creative resource).",
+                    "enum": [
+                        "AD_SERVING_CLICK_TRACKER",
+                        "AD_SERVING_DEFAULT_AD",
+                        "AD_SERVING_STANDARD_AD",
+                        "AD_SERVING_TRACKING"
+                    ],
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

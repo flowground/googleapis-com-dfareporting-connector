@@ -1,0 +1,79 @@
+{
+    "type": "object",
+    "properties": {
+        "maxResults": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 100,
+            "default": 100
+        },
+        "pageToken": {
+            "type": "string"
+        },
+        "profileId": {
+            "required": true,
+            "type": "string"
+        },
+        "oauth_token": {
+            "type": "string"
+        },
+        "prettyPrint": {
+            "type": "boolean",
+            "default": true
+        },
+        "quotaUser": {
+            "type": "string"
+        },
+        "userIp": {
+            "type": "string"
+        },
+        "requestBody": {
+            "description": "Represents a DimensionValuesRequest.",
+            "properties": {
+                "dimensionName": {
+                    "description": "The name of the dimension for which values should be requested.",
+                    "type": "string"
+                },
+                "endDate": {
+                    "description": "The end date of the date range for which to retrieve dimension values. A string of the format \"yyyy-MM-dd\".",
+                    "format": "date",
+                    "type": "string"
+                },
+                "filters": {
+                    "description": "The list of filters by which to filter values. The filters are ANDed.",
+                    "items": {
+                        "description": "Represents a dimension filter.",
+                        "properties": {
+                            "dimensionName": {
+                                "description": "The name of the dimension to filter.",
+                                "type": "string"
+                            },
+                            "kind": {
+                                "default": "dfareporting#dimensionFilter",
+                                "description": "The kind of resource this is, in this case dfareporting#dimensionFilter.",
+                                "type": "string"
+                            },
+                            "value": {
+                                "description": "The value of the dimension to filter.",
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "kind": {
+                    "default": "dfareporting#dimensionValueRequest",
+                    "description": "The kind of request this is, in this case dfareporting#dimensionValueRequest.",
+                    "type": "string"
+                },
+                "startDate": {
+                    "description": "The start date of the date range for which to retrieve dimension values. A string of the format \"yyyy-MM-dd\".",
+                    "format": "date",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

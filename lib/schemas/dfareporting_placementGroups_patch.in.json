@@ -1,0 +1,455 @@
+{
+    "type": "object",
+    "properties": {
+        "id": {
+            "required": true,
+            "type": "string"
+        },
+        "profileId": {
+            "required": true,
+            "type": "string"
+        },
+        "key": {
+            "type": "string"
+        },
+        "oauth_token": {
+            "type": "string"
+        },
+        "prettyPrint": {
+            "type": "boolean",
+            "default": true
+        },
+        "quotaUser": {
+            "type": "string"
+        },
+        "userIp": {
+            "type": "string"
+        },
+        "requestBody": {
+            "description": "Contains properties of a package or roadblock.",
+            "properties": {
+                "accountId": {
+                    "description": "Account ID of this placement group. This is a read-only field that can be left blank.",
+                    "format": "int64",
+                    "type": "string"
+                },
+                "advertiserId": {
+                    "description": "Advertiser ID of this placement group. This is a required field on insertion.",
+                    "format": "int64",
+                    "type": "string"
+                },
+                "advertiserIdDimensionValue": {
+                    "description": "Dimension value for the ID of the advertiser. This is a read-only, auto-generated field.",
+                    "properties": {
+                        "dimensionName": {
+                            "description": "The name of the dimension.",
+                            "type": "string"
+                        },
+                        "etag": {
+                            "description": "The eTag of this response for caching purposes.",
+                            "type": "string"
+                        },
+                        "id": {
+                            "description": "The ID associated with the value if available.",
+                            "type": "string"
+                        },
+                        "kind": {
+                            "default": "dfareporting#dimensionValue",
+                            "description": "The kind of resource this is, in this case dfareporting#dimensionValue.",
+                            "type": "string"
+                        },
+                        "matchType": {
+                            "description": "Determines how the 'value' field is matched when filtering. If not specified, defaults to EXACT. If set to WILDCARD_EXPRESSION, '*' is allowed as a placeholder for variable length character sequences, and it can be escaped with a backslash. Note, only paid search dimensions ('dfa:paidSearch*') allow a matchType other than EXACT.",
+                            "enum": [
+                                "BEGINS_WITH",
+                                "CONTAINS",
+                                "EXACT",
+                                "WILDCARD_EXPRESSION"
+                            ],
+                            "type": "string"
+                        },
+                        "value": {
+                            "description": "The value of the dimension.",
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                },
+                "archived": {
+                    "description": "Whether this placement group is archived.",
+                    "type": "boolean"
+                },
+                "campaignId": {
+                    "description": "Campaign ID of this placement group. This field is required on insertion.",
+                    "format": "int64",
+                    "type": "string"
+                },
+                "campaignIdDimensionValue": {
+                    "description": "Dimension value for the ID of the campaign. This is a read-only, auto-generated field.",
+                    "properties": {
+                        "dimensionName": {
+                            "description": "The name of the dimension.",
+                            "type": "string"
+                        },
+                        "etag": {
+                            "description": "The eTag of this response for caching purposes.",
+                            "type": "string"
+                        },
+                        "id": {
+                            "description": "The ID associated with the value if available.",
+                            "type": "string"
+                        },
+                        "kind": {
+                            "default": "dfareporting#dimensionValue",
+                            "description": "The kind of resource this is, in this case dfareporting#dimensionValue.",
+                            "type": "string"
+                        },
+                        "matchType": {
+                            "description": "Determines how the 'value' field is matched when filtering. If not specified, defaults to EXACT. If set to WILDCARD_EXPRESSION, '*' is allowed as a placeholder for variable length character sequences, and it can be escaped with a backslash. Note, only paid search dimensions ('dfa:paidSearch*') allow a matchType other than EXACT.",
+                            "enum": [
+                                "BEGINS_WITH",
+                                "CONTAINS",
+                                "EXACT",
+                                "WILDCARD_EXPRESSION"
+                            ],
+                            "type": "string"
+                        },
+                        "value": {
+                            "description": "The value of the dimension.",
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                },
+                "childPlacementIds": {
+                    "description": "IDs of placements which are assigned to this placement group. This is a read-only, auto-generated field.",
+                    "items": {
+                        "format": "int64",
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "comment": {
+                    "description": "Comments for this placement group.",
+                    "type": "string"
+                },
+                "contentCategoryId": {
+                    "description": "ID of the content category assigned to this placement group.",
+                    "format": "int64",
+                    "type": "string"
+                },
+                "createInfo": {
+                    "description": "Information about the creation of this placement group. This is a read-only field.",
+                    "properties": {
+                        "time": {
+                            "description": "Timestamp of the last change in milliseconds since epoch.",
+                            "format": "int64",
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                },
+                "directorySiteId": {
+                    "description": "Directory site ID associated with this placement group. On insert, you must set either this field or the site_id field to specify the site associated with this placement group. This is a required field that is read-only after insertion.",
+                    "format": "int64",
+                    "type": "string"
+                },
+                "directorySiteIdDimensionValue": {
+                    "description": "Dimension value for the ID of the directory site. This is a read-only, auto-generated field.",
+                    "properties": {
+                        "dimensionName": {
+                            "description": "The name of the dimension.",
+                            "type": "string"
+                        },
+                        "etag": {
+                            "description": "The eTag of this response for caching purposes.",
+                            "type": "string"
+                        },
+                        "id": {
+                            "description": "The ID associated with the value if available.",
+                            "type": "string"
+                        },
+                        "kind": {
+                            "default": "dfareporting#dimensionValue",
+                            "description": "The kind of resource this is, in this case dfareporting#dimensionValue.",
+                            "type": "string"
+                        },
+                        "matchType": {
+                            "description": "Determines how the 'value' field is matched when filtering. If not specified, defaults to EXACT. If set to WILDCARD_EXPRESSION, '*' is allowed as a placeholder for variable length character sequences, and it can be escaped with a backslash. Note, only paid search dimensions ('dfa:paidSearch*') allow a matchType other than EXACT.",
+                            "enum": [
+                                "BEGINS_WITH",
+                                "CONTAINS",
+                                "EXACT",
+                                "WILDCARD_EXPRESSION"
+                            ],
+                            "type": "string"
+                        },
+                        "value": {
+                            "description": "The value of the dimension.",
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                },
+                "externalId": {
+                    "description": "External ID for this placement.",
+                    "type": "string"
+                },
+                "id": {
+                    "description": "ID of this placement group. This is a read-only, auto-generated field.",
+                    "format": "int64",
+                    "type": "string"
+                },
+                "idDimensionValue": {
+                    "description": "Dimension value for the ID of this placement group. This is a read-only, auto-generated field.",
+                    "properties": {
+                        "dimensionName": {
+                            "description": "The name of the dimension.",
+                            "type": "string"
+                        },
+                        "etag": {
+                            "description": "The eTag of this response for caching purposes.",
+                            "type": "string"
+                        },
+                        "id": {
+                            "description": "The ID associated with the value if available.",
+                            "type": "string"
+                        },
+                        "kind": {
+                            "default": "dfareporting#dimensionValue",
+                            "description": "The kind of resource this is, in this case dfareporting#dimensionValue.",
+                            "type": "string"
+                        },
+                        "matchType": {
+                            "description": "Determines how the 'value' field is matched when filtering. If not specified, defaults to EXACT. If set to WILDCARD_EXPRESSION, '*' is allowed as a placeholder for variable length character sequences, and it can be escaped with a backslash. Note, only paid search dimensions ('dfa:paidSearch*') allow a matchType other than EXACT.",
+                            "enum": [
+                                "BEGINS_WITH",
+                                "CONTAINS",
+                                "EXACT",
+                                "WILDCARD_EXPRESSION"
+                            ],
+                            "type": "string"
+                        },
+                        "value": {
+                            "description": "The value of the dimension.",
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                },
+                "kind": {
+                    "default": "dfareporting#placementGroup",
+                    "description": "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#placementGroup\".",
+                    "type": "string"
+                },
+                "lastModifiedInfo": {
+                    "description": "Information about the most recent modification of this placement group. This is a read-only field.",
+                    "properties": {
+                        "time": {
+                            "description": "Timestamp of the last change in milliseconds since epoch.",
+                            "format": "int64",
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                },
+                "name": {
+                    "description": "Name of this placement group. This is a required field and must be less than 256 characters long.",
+                    "type": "string"
+                },
+                "placementGroupType": {
+                    "description": "Type of this placement group. A package is a simple group of placements that acts as a single pricing point for a group of tags. A roadblock is a group of placements that not only acts as a single pricing point, but also assumes that all the tags in it will be served at the same time. A roadblock requires one of its assigned placements to be marked as primary for reporting. This field is required on insertion.",
+                    "enum": [
+                        "PLACEMENT_PACKAGE",
+                        "PLACEMENT_ROADBLOCK"
+                    ],
+                    "type": "string"
+                },
+                "placementStrategyId": {
+                    "description": "ID of the placement strategy assigned to this placement group.",
+                    "format": "int64",
+                    "type": "string"
+                },
+                "pricingSchedule": {
+                    "description": "Pricing schedule of this placement group. This field is required on insertion.",
+                    "properties": {
+                        "capCostOption": {
+                            "description": "Placement cap cost option.",
+                            "enum": [
+                                "CAP_COST_CUMULATIVE",
+                                "CAP_COST_MONTHLY",
+                                "CAP_COST_NONE"
+                            ],
+                            "type": "string"
+                        },
+                        "disregardOverdelivery": {
+                            "description": "Whether cap costs are ignored by ad serving.",
+                            "type": "boolean"
+                        },
+                        "endDate": {
+                            "description": "Placement end date. This date must be later than, or the same day as, the placement start date, but not later than the campaign end date. If, for example, you set 6/25/2015 as both the start and end dates, the effective placement date is just that day only, 6/25/2015. The hours, minutes, and seconds of the end date should not be set, as doing so will result in an error. This field is required on insertion.",
+                            "format": "date",
+                            "type": "string"
+                        },
+                        "flighted": {
+                            "description": "Whether this placement is flighted. If true, pricing periods will be computed automatically.",
+                            "type": "boolean"
+                        },
+                        "floodlightActivityId": {
+                            "description": "Floodlight activity ID associated with this placement. This field should be set when placement pricing type is set to PRICING_TYPE_CPA.",
+                            "format": "int64",
+                            "type": "string"
+                        },
+                        "pricingPeriods": {
+                            "description": "Pricing periods for this placement.",
+                            "items": {
+                                "description": "Pricing Period",
+                                "properties": {
+                                    "endDate": {
+                                        "description": "Pricing period end date. This date must be later than, or the same day as, the pricing period start date, but not later than the placement end date. The period end date can be the same date as the period start date. If, for example, you set 6/25/2015 as both the start and end dates, the effective pricing period date is just that day only, 6/25/2015. The hours, minutes, and seconds of the end date should not be set, as doing so will result in an error.",
+                                        "format": "date",
+                                        "type": "string"
+                                    },
+                                    "pricingComment": {
+                                        "description": "Comments for this pricing period.",
+                                        "type": "string"
+                                    },
+                                    "rateOrCostNanos": {
+                                        "description": "Rate or cost of this pricing period in nanos (i.e., multipled by 1000000000). Acceptable values are 0 to 1000000000000000000, inclusive.",
+                                        "format": "int64",
+                                        "type": "string"
+                                    },
+                                    "startDate": {
+                                        "description": "Pricing period start date. This date must be later than, or the same day as, the placement start date. The hours, minutes, and seconds of the start date should not be set, as doing so will result in an error.",
+                                        "format": "date",
+                                        "type": "string"
+                                    },
+                                    "units": {
+                                        "description": "Units of this pricing period. Acceptable values are 0 to 10000000000, inclusive.",
+                                        "format": "int64",
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "pricingType": {
+                            "description": "Placement pricing type. This field is required on insertion.",
+                            "enum": [
+                                "PRICING_TYPE_CPA",
+                                "PRICING_TYPE_CPC",
+                                "PRICING_TYPE_CPM",
+                                "PRICING_TYPE_CPM_ACTIVEVIEW",
+                                "PRICING_TYPE_FLAT_RATE_CLICKS",
+                                "PRICING_TYPE_FLAT_RATE_IMPRESSIONS"
+                            ],
+                            "type": "string"
+                        },
+                        "startDate": {
+                            "description": "Placement start date. This date must be later than, or the same day as, the campaign start date. The hours, minutes, and seconds of the start date should not be set, as doing so will result in an error. This field is required on insertion.",
+                            "format": "date",
+                            "type": "string"
+                        },
+                        "testingStartDate": {
+                            "description": "Testing start date of this placement. The hours, minutes, and seconds of the start date should not be set, as doing so will result in an error.",
+                            "format": "date",
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                },
+                "primaryPlacementId": {
+                    "description": "ID of the primary placement, used to calculate the media cost of a roadblock (placement group). Modifying this field will automatically modify the primary field on all affected roadblock child placements.",
+                    "format": "int64",
+                    "type": "string"
+                },
+                "primaryPlacementIdDimensionValue": {
+                    "description": "Dimension value for the ID of the primary placement. This is a read-only, auto-generated field.",
+                    "properties": {
+                        "dimensionName": {
+                            "description": "The name of the dimension.",
+                            "type": "string"
+                        },
+                        "etag": {
+                            "description": "The eTag of this response for caching purposes.",
+                            "type": "string"
+                        },
+                        "id": {
+                            "description": "The ID associated with the value if available.",
+                            "type": "string"
+                        },
+                        "kind": {
+                            "default": "dfareporting#dimensionValue",
+                            "description": "The kind of resource this is, in this case dfareporting#dimensionValue.",
+                            "type": "string"
+                        },
+                        "matchType": {
+                            "description": "Determines how the 'value' field is matched when filtering. If not specified, defaults to EXACT. If set to WILDCARD_EXPRESSION, '*' is allowed as a placeholder for variable length character sequences, and it can be escaped with a backslash. Note, only paid search dimensions ('dfa:paidSearch*') allow a matchType other than EXACT.",
+                            "enum": [
+                                "BEGINS_WITH",
+                                "CONTAINS",
+                                "EXACT",
+                                "WILDCARD_EXPRESSION"
+                            ],
+                            "type": "string"
+                        },
+                        "value": {
+                            "description": "The value of the dimension.",
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                },
+                "siteId": {
+                    "description": "Site ID associated with this placement group. On insert, you must set either this field or the directorySiteId field to specify the site associated with this placement group. This is a required field that is read-only after insertion.",
+                    "format": "int64",
+                    "type": "string"
+                },
+                "siteIdDimensionValue": {
+                    "description": "Dimension value for the ID of the site. This is a read-only, auto-generated field.",
+                    "properties": {
+                        "dimensionName": {
+                            "description": "The name of the dimension.",
+                            "type": "string"
+                        },
+                        "etag": {
+                            "description": "The eTag of this response for caching purposes.",
+                            "type": "string"
+                        },
+                        "id": {
+                            "description": "The ID associated with the value if available.",
+                            "type": "string"
+                        },
+                        "kind": {
+                            "default": "dfareporting#dimensionValue",
+                            "description": "The kind of resource this is, in this case dfareporting#dimensionValue.",
+                            "type": "string"
+                        },
+                        "matchType": {
+                            "description": "Determines how the 'value' field is matched when filtering. If not specified, defaults to EXACT. If set to WILDCARD_EXPRESSION, '*' is allowed as a placeholder for variable length character sequences, and it can be escaped with a backslash. Note, only paid search dimensions ('dfa:paidSearch*') allow a matchType other than EXACT.",
+                            "enum": [
+                                "BEGINS_WITH",
+                                "CONTAINS",
+                                "EXACT",
+                                "WILDCARD_EXPRESSION"
+                            ],
+                            "type": "string"
+                        },
+                        "value": {
+                            "description": "The value of the dimension.",
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                },
+                "subaccountId": {
+                    "description": "Subaccount ID of this placement group. This is a read-only field that can be left blank.",
+                    "format": "int64",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

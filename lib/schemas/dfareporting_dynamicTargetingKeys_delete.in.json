@@ -1,0 +1,37 @@
+{
+    "type": "object",
+    "properties": {
+        "name": {
+            "required": true,
+            "type": "string"
+        },
+        "objectId": {
+            "required": true,
+            "type": "string"
+        },
+        "objectType": {
+            "required": true,
+            "type": "string",
+            "enum": [
+                "OBJECT_AD",
+                "OBJECT_ADVERTISER",
+                "OBJECT_CREATIVE",
+                "OBJECT_PLACEMENT"
+            ]
+        },
+        "profileId": {
+            "required": true,
+            "type": "string"
+        },
+        "prettyPrint": {
+            "type": "boolean",
+            "default": true
+        },
+        "quotaUser": {
+            "type": "string"
+        },
+        "userIp": {
+            "type": "string"
+        }
+    }
+}

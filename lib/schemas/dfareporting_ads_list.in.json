@@ -1,0 +1,135 @@
+{
+    "type": "object",
+    "properties": {
+        "active": {
+            "type": "boolean"
+        },
+        "advertiserId": {
+            "type": "string"
+        },
+        "archived": {
+            "type": "boolean"
+        },
+        "audienceSegmentIds": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "campaignIds": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "compatibility": {
+            "type": "string",
+            "enum": [
+                "APP",
+                "APP_INTERSTITIAL",
+                "DISPLAY",
+                "DISPLAY_INTERSTITIAL",
+                "IN_STREAM_AUDIO",
+                "IN_STREAM_VIDEO"
+            ]
+        },
+        "creativeIds": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "creativeOptimizationConfigurationIds": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "dynamicClickTracker": {
+            "type": "boolean"
+        },
+        "ids": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "landingPageIds": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "maxResults": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 1000,
+            "default": 1000
+        },
+        "overriddenEventTagId": {
+            "type": "string"
+        },
+        "pageToken": {
+            "type": "string"
+        },
+        "placementIds": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "profileId": {
+            "required": true,
+            "type": "string"
+        },
+        "remarketingListIds": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "searchString": {
+            "type": "string"
+        },
+        "sizeIds": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "sortField": {
+            "type": "string",
+            "enum": [
+                "ID",
+                "NAME"
+            ],
+            "default": "ID"
+        },
+        "sortOrder": {
+            "type": "string",
+            "enum": [
+                "ASCENDING",
+                "DESCENDING"
+            ],
+            "default": "ASCENDING"
+        },
+        "sslCompliant": {
+            "type": "boolean"
+        },
+        "sslRequired": {
+            "type": "boolean"
+        },
+        "type": {
+            "type": "array",
+            "items": {
+                "enum": [
+                    "AD_SERVING_CLICK_TRACKER",
+                    "AD_SERVING_DEFAULT_AD",
+                    "AD_SERVING_STANDARD_AD",
+                    "AD_SERVING_TRACKING"
+                ],
+                "type": "string"
+            }
+        }
+    }
+}

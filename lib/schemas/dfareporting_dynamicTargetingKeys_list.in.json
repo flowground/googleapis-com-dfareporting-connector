@@ -1,0 +1,36 @@
+{
+    "type": "object",
+    "properties": {
+        "advertiserId": {
+            "type": "string"
+        },
+        "names": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "objectId": {
+            "type": "string"
+        },
+        "objectType": {
+            "type": "string",
+            "enum": [
+                "OBJECT_AD",
+                "OBJECT_ADVERTISER",
+                "OBJECT_CREATIVE",
+                "OBJECT_PLACEMENT"
+            ]
+        },
+        "profileId": {
+            "required": true,
+            "type": "string"
+        },
+        "quotaUser": {
+            "type": "string"
+        },
+        "userIp": {
+            "type": "string"
+        }
+    }
+}

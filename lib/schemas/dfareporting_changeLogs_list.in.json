@@ -1,0 +1,111 @@
+{
+    "type": "object",
+    "properties": {
+        "action": {
+            "type": "string",
+            "enum": [
+                "ACTION_ADD",
+                "ACTION_ASSIGN",
+                "ACTION_ASSOCIATE",
+                "ACTION_CREATE",
+                "ACTION_DELETE",
+                "ACTION_DISABLE",
+                "ACTION_EMAIL_TAGS",
+                "ACTION_ENABLE",
+                "ACTION_LINK",
+                "ACTION_MARK_AS_DEFAULT",
+                "ACTION_PUSH",
+                "ACTION_REMOVE",
+                "ACTION_SEND",
+                "ACTION_SHARE",
+                "ACTION_UNASSIGN",
+                "ACTION_UNLINK",
+                "ACTION_UPDATE"
+            ]
+        },
+        "ids": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "maxChangeTime": {
+            "type": "string"
+        },
+        "maxResults": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 1000,
+            "default": 1000
+        },
+        "minChangeTime": {
+            "type": "string"
+        },
+        "objectIds": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "objectType": {
+            "type": "string",
+            "enum": [
+                "OBJECT_ACCOUNT",
+                "OBJECT_ACCOUNT_BILLING_FEATURE",
+                "OBJECT_AD",
+                "OBJECT_ADVERTISER",
+                "OBJECT_ADVERTISER_GROUP",
+                "OBJECT_BILLING_ACCOUNT_GROUP",
+                "OBJECT_BILLING_FEATURE",
+                "OBJECT_BILLING_MINIMUM_FEE",
+                "OBJECT_BILLING_PROFILE",
+                "OBJECT_CAMPAIGN",
+                "OBJECT_CONTENT_CATEGORY",
+                "OBJECT_CREATIVE",
+                "OBJECT_CREATIVE_ASSET",
+                "OBJECT_CREATIVE_BUNDLE",
+                "OBJECT_CREATIVE_FIELD",
+                "OBJECT_CREATIVE_GROUP",
+                "OBJECT_DFA_SITE",
+                "OBJECT_EVENT_TAG",
+                "OBJECT_FLOODLIGHT_ACTIVITY_GROUP",
+                "OBJECT_FLOODLIGHT_ACTVITY",
+                "OBJECT_FLOODLIGHT_CONFIGURATION",
+                "OBJECT_INSTREAM_CREATIVE",
+                "OBJECT_LANDING_PAGE",
+                "OBJECT_MEDIA_ORDER",
+                "OBJECT_PLACEMENT",
+                "OBJECT_PLACEMENT_STRATEGY",
+                "OBJECT_PLAYSTORE_LINK",
+                "OBJECT_PROVIDED_LIST_CLIENT",
+                "OBJECT_RATE_CARD",
+                "OBJECT_REMARKETING_LIST",
+                "OBJECT_RICHMEDIA_CREATIVE",
+                "OBJECT_SD_SITE",
+                "OBJECT_SEARCH_LIFT_STUDY",
+                "OBJECT_SIZE",
+                "OBJECT_SUBACCOUNT",
+                "OBJECT_TARGETING_TEMPLATE",
+                "OBJECT_USER_PROFILE",
+                "OBJECT_USER_PROFILE_FILTER",
+                "OBJECT_USER_ROLE"
+            ]
+        },
+        "pageToken": {
+            "type": "string"
+        },
+        "profileId": {
+            "required": true,
+            "type": "string"
+        },
+        "searchString": {
+            "type": "string"
+        },
+        "userProfileIds": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        }
+    }
+}

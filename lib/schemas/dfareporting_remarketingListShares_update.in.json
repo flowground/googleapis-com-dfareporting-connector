@@ -1,0 +1,60 @@
+{
+    "type": "object",
+    "properties": {
+        "profileId": {
+            "required": true,
+            "type": "string"
+        },
+        "fields": {
+            "type": "string"
+        },
+        "key": {
+            "type": "string"
+        },
+        "oauth_token": {
+            "type": "string"
+        },
+        "prettyPrint": {
+            "type": "boolean",
+            "default": true
+        },
+        "quotaUser": {
+            "type": "string"
+        },
+        "userIp": {
+            "type": "string"
+        },
+        "requestBody": {
+            "description": "Contains properties of a remarketing list's sharing information. Sharing allows other accounts or advertisers to target to your remarketing lists. This resource can be used to manage remarketing list sharing to other accounts and advertisers.",
+            "properties": {
+                "kind": {
+                    "default": "dfareporting#remarketingListShare",
+                    "description": "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#remarketingListShare\".",
+                    "type": "string"
+                },
+                "remarketingListId": {
+                    "description": "Remarketing list ID. This is a read-only, auto-generated field.",
+                    "format": "int64",
+                    "type": "string"
+                },
+                "sharedAccountIds": {
+                    "description": "Accounts that the remarketing list is shared with.",
+                    "items": {
+                        "format": "int64",
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "sharedAdvertiserIds": {
+                    "description": "Advertisers that the remarketing list is shared with.",
+                    "items": {
+                        "format": "int64",
+                        "type": "string"
+                    },
+                    "type": "array"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

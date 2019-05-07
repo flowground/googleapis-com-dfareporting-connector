@@ -1,0 +1,71 @@
+{
+    "type": "object",
+    "properties": {
+        "advertiserGroupIds": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "floodlightConfigurationIds": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "ids": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "includeAdvertisersWithoutGroupsOnly": {
+            "type": "boolean"
+        },
+        "maxResults": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 1000,
+            "default": 1000
+        },
+        "onlyParent": {
+            "type": "boolean"
+        },
+        "pageToken": {
+            "type": "string"
+        },
+        "profileId": {
+            "required": true,
+            "type": "string"
+        },
+        "searchString": {
+            "type": "string"
+        },
+        "sortField": {
+            "type": "string",
+            "enum": [
+                "ID",
+                "NAME"
+            ],
+            "default": "ID"
+        },
+        "sortOrder": {
+            "type": "string",
+            "enum": [
+                "ASCENDING",
+                "DESCENDING"
+            ],
+            "default": "ASCENDING"
+        },
+        "status": {
+            "type": "string",
+            "enum": [
+                "APPROVED",
+                "ON_HOLD"
+            ]
+        },
+        "subaccountId": {
+            "type": "string"
+        }
+    }
+}

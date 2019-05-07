@@ -1,0 +1,498 @@
+{
+    "type": "object",
+    "properties": {
+        "profileId": {
+            "required": true,
+            "type": "string"
+        },
+        "fields": {
+            "type": "string"
+        },
+        "key": {
+            "type": "string"
+        },
+        "oauth_token": {
+            "type": "string"
+        },
+        "prettyPrint": {
+            "type": "boolean",
+            "default": true
+        },
+        "quotaUser": {
+            "type": "string"
+        },
+        "userIp": {
+            "type": "string"
+        },
+        "requestBody": {
+            "description": "Contains properties of a Campaign Manager campaign.",
+            "properties": {
+                "accountId": {
+                    "description": "Account ID of this campaign. This is a read-only field that can be left blank.",
+                    "format": "int64",
+                    "type": "string"
+                },
+                "adBlockingConfiguration": {
+                    "description": "Ad blocking settings for this campaign.",
+                    "properties": {
+                        "clickThroughUrl": {
+                            "description": "Click-through URL used by brand-neutral ads. This is a required field when overrideClickThroughUrl is set to true.",
+                            "type": "string"
+                        },
+                        "creativeBundleId": {
+                            "description": "ID of a creative bundle to use for this campaign. If set, brand-neutral ads will select creatives from this bundle. Otherwise, a default transparent pixel will be used.",
+                            "format": "int64",
+                            "type": "string"
+                        },
+                        "enabled": {
+                            "description": "Whether this campaign has enabled ad blocking. When true, ad blocking is enabled for placements in the campaign, but this may be overridden by site and placement settings. When false, ad blocking is disabled for all placements under the campaign, regardless of site and placement settings.",
+                            "type": "boolean"
+                        },
+                        "overrideClickThroughUrl": {
+                            "description": "Whether the brand-neutral ad's click-through URL comes from the campaign's creative bundle or the override URL. Must be set to true if ad blocking is enabled and no creative bundle is configured.",
+                            "type": "boolean"
+                        }
+                    },
+                    "type": "object"
+                },
+                "additionalCreativeOptimizationConfigurations": {
+                    "description": "Additional creative optimization configurations for the campaign.",
+                    "items": {
+                        "description": "Creative optimization settings.",
+                        "properties": {
+                            "id": {
+                                "description": "ID of this creative optimization config. This field is auto-generated when the campaign is inserted or updated. It can be null for existing campaigns.",
+                                "format": "int64",
+                                "type": "string"
+                            },
+                            "name": {
+                                "description": "Name of this creative optimization config. This is a required field and must be less than 129 characters long.",
+                                "type": "string"
+                            },
+                            "optimizationActivitys": {
+                                "description": "List of optimization activities associated with this configuration.",
+                                "items": {
+                                    "description": "Creative optimization activity.",
+                                    "properties": {
+                                        "floodlightActivityId": {
+                                            "description": "Floodlight activity ID of this optimization activity. This is a required field.",
+                                            "format": "int64",
+                                            "type": "string"
+                                        },
+                                        "floodlightActivityIdDimensionValue": {
+                                            "description": "Dimension value for the ID of the floodlight activity. This is a read-only, auto-generated field.",
+                                            "properties": {
+                                                "dimensionName": {
+                                                    "description": "The name of the dimension.",
+                                                    "type": "string"
+                                                },
+                                                "etag": {
+                                                    "description": "The eTag of this response for caching purposes.",
+                                                    "type": "string"
+                                                },
+                                                "id": {
+                                                    "description": "The ID associated with the value if available.",
+                                                    "type": "string"
+                                                },
+                                                "kind": {
+                                                    "default": "dfareporting#dimensionValue",
+                                                    "description": "The kind of resource this is, in this case dfareporting#dimensionValue.",
+                                                    "type": "string"
+                                                },
+                                                "matchType": {
+                                                    "description": "Determines how the 'value' field is matched when filtering. If not specified, defaults to EXACT. If set to WILDCARD_EXPRESSION, '*' is allowed as a placeholder for variable length character sequences, and it can be escaped with a backslash. Note, only paid search dimensions ('dfa:paidSearch*') allow a matchType other than EXACT.",
+                                                    "enum": [
+                                                        "BEGINS_WITH",
+                                                        "CONTAINS",
+                                                        "EXACT",
+                                                        "WILDCARD_EXPRESSION"
+                                                    ],
+                                                    "type": "string"
+                                                },
+                                                "value": {
+                                                    "description": "The value of the dimension.",
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "type": "object"
+                                        },
+                                        "weight": {
+                                            "description": "Weight associated with this optimization. The weight assigned will be understood in proportion to the weights assigned to the other optimization activities. Value must be greater than or equal to 1.",
+                                            "format": "int32",
+                                            "type": "integer"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            "optimizationModel": {
+                                "description": "Optimization model for this configuration.",
+                                "enum": [
+                                    "CLICK",
+                                    "POST_CLICK",
+                                    "POST_CLICK_AND_IMPRESSION",
+                                    "POST_IMPRESSION",
+                                    "VIDEO_COMPLETION"
+                                ],
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "advertiserGroupId": {
+                    "description": "Advertiser group ID of the associated advertiser.",
+                    "format": "int64",
+                    "type": "string"
+                },
+                "advertiserId": {
+                    "description": "Advertiser ID of this campaign. This is a required field.",
+                    "format": "int64",
+                    "type": "string"
+                },
+                "advertiserIdDimensionValue": {
+                    "description": "Dimension value for the advertiser ID of this campaign. This is a read-only, auto-generated field.",
+                    "properties": {
+                        "dimensionName": {
+                            "description": "The name of the dimension.",
+                            "type": "string"
+                        },
+                        "etag": {
+                            "description": "The eTag of this response for caching purposes.",
+                            "type": "string"
+                        },
+                        "id": {
+                            "description": "The ID associated with the value if available.",
+                            "type": "string"
+                        },
+                        "kind": {
+                            "default": "dfareporting#dimensionValue",
+                            "description": "The kind of resource this is, in this case dfareporting#dimensionValue.",
+                            "type": "string"
+                        },
+                        "matchType": {
+                            "description": "Determines how the 'value' field is matched when filtering. If not specified, defaults to EXACT. If set to WILDCARD_EXPRESSION, '*' is allowed as a placeholder for variable length character sequences, and it can be escaped with a backslash. Note, only paid search dimensions ('dfa:paidSearch*') allow a matchType other than EXACT.",
+                            "enum": [
+                                "BEGINS_WITH",
+                                "CONTAINS",
+                                "EXACT",
+                                "WILDCARD_EXPRESSION"
+                            ],
+                            "type": "string"
+                        },
+                        "value": {
+                            "description": "The value of the dimension.",
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                },
+                "archived": {
+                    "description": "Whether this campaign has been archived.",
+                    "type": "boolean"
+                },
+                "audienceSegmentGroups": {
+                    "description": "Audience segment groups assigned to this campaign. Cannot have more than 300 segment groups.",
+                    "items": {
+                        "description": "Audience Segment Group.",
+                        "properties": {
+                            "audienceSegments": {
+                                "description": "Audience segments assigned to this group. The number of segments must be between 2 and 100.",
+                                "items": {
+                                    "description": "Audience Segment.",
+                                    "properties": {
+                                        "allocation": {
+                                            "description": "Weight allocated to this segment. The weight assigned will be understood in proportion to the weights assigned to other segments in the same segment group. Acceptable values are 1 to 1000, inclusive.",
+                                            "format": "int32",
+                                            "type": "integer"
+                                        },
+                                        "id": {
+                                            "description": "ID of this audience segment. This is a read-only, auto-generated field.",
+                                            "format": "int64",
+                                            "type": "string"
+                                        },
+                                        "name": {
+                                            "description": "Name of this audience segment. This is a required field and must be less than 65 characters long.",
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            "id": {
+                                "description": "ID of this audience segment group. This is a read-only, auto-generated field.",
+                                "format": "int64",
+                                "type": "string"
+                            },
+                            "name": {
+                                "description": "Name of this audience segment group. This is a required field and must be less than 65 characters long.",
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "billingInvoiceCode": {
+                    "description": "Billing invoice code included in the Campaign Manager client billing invoices associated with the campaign.",
+                    "type": "string"
+                },
+                "clickThroughUrlSuffixProperties": {
+                    "description": "Click-through URL suffix override properties for this campaign.",
+                    "properties": {
+                        "clickThroughUrlSuffix": {
+                            "description": "Click-through URL suffix to apply to all ads in this entity's scope. Must be less than 128 characters long.",
+                            "type": "string"
+                        },
+                        "overrideInheritedSuffix": {
+                            "description": "Whether this entity should override the inherited click-through URL suffix with its own defined value.",
+                            "type": "boolean"
+                        }
+                    },
+                    "type": "object"
+                },
+                "comment": {
+                    "description": "Arbitrary comments about this campaign. Must be less than 256 characters long.",
+                    "type": "string"
+                },
+                "createInfo": {
+                    "description": "Information about the creation of this campaign. This is a read-only field.",
+                    "properties": {
+                        "time": {
+                            "description": "Timestamp of the last change in milliseconds since epoch.",
+                            "format": "int64",
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                },
+                "creativeGroupIds": {
+                    "description": "List of creative group IDs that are assigned to the campaign.",
+                    "items": {
+                        "format": "int64",
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "creativeOptimizationConfiguration": {
+                    "description": "Creative optimization configuration for the campaign.",
+                    "properties": {
+                        "id": {
+                            "description": "ID of this creative optimization config. This field is auto-generated when the campaign is inserted or updated. It can be null for existing campaigns.",
+                            "format": "int64",
+                            "type": "string"
+                        },
+                        "name": {
+                            "description": "Name of this creative optimization config. This is a required field and must be less than 129 characters long.",
+                            "type": "string"
+                        },
+                        "optimizationActivitys": {
+                            "description": "List of optimization activities associated with this configuration.",
+                            "items": {
+                                "description": "Creative optimization activity.",
+                                "properties": {
+                                    "floodlightActivityId": {
+                                        "description": "Floodlight activity ID of this optimization activity. This is a required field.",
+                                        "format": "int64",
+                                        "type": "string"
+                                    },
+                                    "floodlightActivityIdDimensionValue": {
+                                        "description": "Dimension value for the ID of the floodlight activity. This is a read-only, auto-generated field.",
+                                        "properties": {
+                                            "dimensionName": {
+                                                "description": "The name of the dimension.",
+                                                "type": "string"
+                                            },
+                                            "etag": {
+                                                "description": "The eTag of this response for caching purposes.",
+                                                "type": "string"
+                                            },
+                                            "id": {
+                                                "description": "The ID associated with the value if available.",
+                                                "type": "string"
+                                            },
+                                            "kind": {
+                                                "default": "dfareporting#dimensionValue",
+                                                "description": "The kind of resource this is, in this case dfareporting#dimensionValue.",
+                                                "type": "string"
+                                            },
+                                            "matchType": {
+                                                "description": "Determines how the 'value' field is matched when filtering. If not specified, defaults to EXACT. If set to WILDCARD_EXPRESSION, '*' is allowed as a placeholder for variable length character sequences, and it can be escaped with a backslash. Note, only paid search dimensions ('dfa:paidSearch*') allow a matchType other than EXACT.",
+                                                "enum": [
+                                                    "BEGINS_WITH",
+                                                    "CONTAINS",
+                                                    "EXACT",
+                                                    "WILDCARD_EXPRESSION"
+                                                ],
+                                                "type": "string"
+                                            },
+                                            "value": {
+                                                "description": "The value of the dimension.",
+                                                "type": "string"
+                                            }
+                                        },
+                                        "type": "object"
+                                    },
+                                    "weight": {
+                                        "description": "Weight associated with this optimization. The weight assigned will be understood in proportion to the weights assigned to the other optimization activities. Value must be greater than or equal to 1.",
+                                        "format": "int32",
+                                        "type": "integer"
+                                    }
+                                },
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "optimizationModel": {
+                            "description": "Optimization model for this configuration.",
+                            "enum": [
+                                "CLICK",
+                                "POST_CLICK",
+                                "POST_CLICK_AND_IMPRESSION",
+                                "POST_IMPRESSION",
+                                "VIDEO_COMPLETION"
+                            ],
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                },
+                "defaultClickThroughEventTagProperties": {
+                    "description": "Click-through event tag ID override properties for this campaign.",
+                    "properties": {
+                        "defaultClickThroughEventTagId": {
+                            "description": "ID of the click-through event tag to apply to all ads in this entity's scope.",
+                            "format": "int64",
+                            "type": "string"
+                        },
+                        "overrideInheritedEventTag": {
+                            "description": "Whether this entity should override the inherited default click-through event tag with its own defined value.",
+                            "type": "boolean"
+                        }
+                    },
+                    "type": "object"
+                },
+                "defaultLandingPageId": {
+                    "description": "The default landing page ID for this campaign.",
+                    "format": "int64",
+                    "type": "string"
+                },
+                "endDate": {
+                    "description": "Date on which the campaign will stop running. On insert, the end date must be today or a future date. The end date must be later than or be the same as the start date. If, for example, you set 6/25/2015 as both the start and end dates, the effective campaign run date is just that day only, 6/25/2015. The hours, minutes, and seconds of the end date should not be set, as doing so will result in an error. This is a required field.",
+                    "format": "date",
+                    "type": "string"
+                },
+                "eventTagOverrides": {
+                    "description": "Overrides that can be used to activate or deactivate advertiser event tags.",
+                    "items": {
+                        "description": "Event tag override information.",
+                        "properties": {
+                            "enabled": {
+                                "description": "Whether this override is enabled.",
+                                "type": "boolean"
+                            },
+                            "id": {
+                                "description": "ID of this event tag override. This is a read-only, auto-generated field.",
+                                "format": "int64",
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "externalId": {
+                    "description": "External ID for this campaign.",
+                    "type": "string"
+                },
+                "id": {
+                    "description": "ID of this campaign. This is a read-only auto-generated field.",
+                    "format": "int64",
+                    "type": "string"
+                },
+                "idDimensionValue": {
+                    "description": "Dimension value for the ID of this campaign. This is a read-only, auto-generated field.",
+                    "properties": {
+                        "dimensionName": {
+                            "description": "The name of the dimension.",
+                            "type": "string"
+                        },
+                        "etag": {
+                            "description": "The eTag of this response for caching purposes.",
+                            "type": "string"
+                        },
+                        "id": {
+                            "description": "The ID associated with the value if available.",
+                            "type": "string"
+                        },
+                        "kind": {
+                            "default": "dfareporting#dimensionValue",
+                            "description": "The kind of resource this is, in this case dfareporting#dimensionValue.",
+                            "type": "string"
+                        },
+                        "matchType": {
+                            "description": "Determines how the 'value' field is matched when filtering. If not specified, defaults to EXACT. If set to WILDCARD_EXPRESSION, '*' is allowed as a placeholder for variable length character sequences, and it can be escaped with a backslash. Note, only paid search dimensions ('dfa:paidSearch*') allow a matchType other than EXACT.",
+                            "enum": [
+                                "BEGINS_WITH",
+                                "CONTAINS",
+                                "EXACT",
+                                "WILDCARD_EXPRESSION"
+                            ],
+                            "type": "string"
+                        },
+                        "value": {
+                            "description": "The value of the dimension.",
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                },
+                "kind": {
+                    "default": "dfareporting#campaign",
+                    "description": "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#campaign\".",
+                    "type": "string"
+                },
+                "lastModifiedInfo": {
+                    "description": "Information about the most recent modification of this campaign. This is a read-only field.",
+                    "properties": {
+                        "time": {
+                            "description": "Timestamp of the last change in milliseconds since epoch.",
+                            "format": "int64",
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                },
+                "name": {
+                    "description": "Name of this campaign. This is a required field and must be less than 256 characters long and unique among campaigns of the same advertiser.",
+                    "type": "string"
+                },
+                "nielsenOcrEnabled": {
+                    "description": "Whether Nielsen reports are enabled for this campaign.",
+                    "type": "boolean"
+                },
+                "startDate": {
+                    "description": "Date on which the campaign starts running. The start date can be any date. The hours, minutes, and seconds of the start date should not be set, as doing so will result in an error. This is a required field.",
+                    "format": "date",
+                    "type": "string"
+                },
+                "subaccountId": {
+                    "description": "Subaccount ID of this campaign. This is a read-only field that can be left blank.",
+                    "format": "int64",
+                    "type": "string"
+                },
+                "traffickerEmails": {
+                    "description": "Campaign trafficker contact emails.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

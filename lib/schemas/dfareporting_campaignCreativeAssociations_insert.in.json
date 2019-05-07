@@ -1,0 +1,45 @@
+{
+    "type": "object",
+    "properties": {
+        "campaignId": {
+            "required": true,
+            "type": "string"
+        },
+        "profileId": {
+            "required": true,
+            "type": "string"
+        },
+        "key": {
+            "type": "string"
+        },
+        "oauth_token": {
+            "type": "string"
+        },
+        "prettyPrint": {
+            "type": "boolean",
+            "default": true
+        },
+        "quotaUser": {
+            "type": "string"
+        },
+        "userIp": {
+            "type": "string"
+        },
+        "requestBody": {
+            "description": "Identifies a creative which has been associated with a given campaign.",
+            "properties": {
+                "creativeId": {
+                    "description": "ID of the creative associated with the campaign. This is a required field.",
+                    "format": "int64",
+                    "type": "string"
+                },
+                "kind": {
+                    "default": "dfareporting#campaignCreativeAssociation",
+                    "description": "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#campaignCreativeAssociation\".",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

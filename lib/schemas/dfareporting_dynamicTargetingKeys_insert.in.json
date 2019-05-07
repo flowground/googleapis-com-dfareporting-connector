@@ -1,0 +1,58 @@
+{
+    "type": "object",
+    "properties": {
+        "profileId": {
+            "required": true,
+            "type": "string"
+        },
+        "fields": {
+            "type": "string"
+        },
+        "key": {
+            "type": "string"
+        },
+        "oauth_token": {
+            "type": "string"
+        },
+        "prettyPrint": {
+            "type": "boolean",
+            "default": true
+        },
+        "quotaUser": {
+            "type": "string"
+        },
+        "userIp": {
+            "type": "string"
+        },
+        "requestBody": {
+            "description": "Contains properties of a dynamic targeting key. Dynamic targeting keys are unique, user-friendly labels, created at the advertiser level in DCM, that can be assigned to ads, creatives, and placements and used for targeting with Studio dynamic creatives. Use these labels instead of numeric Campaign Manager IDs (such as placement IDs) to save time and avoid errors in your dynamic feeds.",
+            "properties": {
+                "kind": {
+                    "default": "dfareporting#dynamicTargetingKey",
+                    "description": "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#dynamicTargetingKey\".",
+                    "type": "string"
+                },
+                "name": {
+                    "description": "Name of this dynamic targeting key. This is a required field. Must be less than 256 characters long and cannot contain commas. All characters are converted to lowercase.",
+                    "type": "string"
+                },
+                "objectId": {
+                    "description": "ID of the object of this dynamic targeting key. This is a required field.",
+                    "format": "int64",
+                    "type": "string"
+                },
+                "objectType": {
+                    "description": "Type of the object of this dynamic targeting key. This is a required field.",
+                    "enum": [
+                        "OBJECT_AD",
+                        "OBJECT_ADVERTISER",
+                        "OBJECT_CREATIVE",
+                        "OBJECT_PLACEMENT"
+                    ],
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        }
+    }
+}
